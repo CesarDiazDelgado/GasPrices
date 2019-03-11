@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.rarct.gasprices.MainView" >
+        <activity android:name="com.example.rarct.gasprices.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

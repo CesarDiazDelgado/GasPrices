@@ -25,6 +25,10 @@ public class MainModel{
         townsEntityList = repository.getTownsEntityList();
     }
 
+    public MainModel() {
+
+    }
+
     List<CommunitiesEntity> getCommunitiesEntityList() { return communitiesEntityList; }
     public void insert(CommunitiesEntity community) { repository.insertCommunity(community); }
 

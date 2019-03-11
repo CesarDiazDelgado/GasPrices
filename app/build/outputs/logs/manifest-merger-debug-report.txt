@@ -60,10 +60,10 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\ra
 		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:13:9-40
-activity#com.example.rarct.gasprices.MainView
+activity#com.example.rarct.gasprices.MainActivity
 ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:14:19-43
+		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
