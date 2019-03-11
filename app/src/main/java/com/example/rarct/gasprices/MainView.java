@@ -27,6 +27,8 @@ public class MainView extends Activity {
         Spinner spinnerCommunity = findViewById(R.id.spinnerCommunity);
         spinnerCommunity.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, readLine()));
 
+        AppDatabase.getDatabase(this);
+
     }
 
     public List<String> readLine() {

@@ -1,27 +1,38 @@
 package com.example.rarct.gasprices;
 
-import android.content.Context;
-import android.content.res.Resources;
+import android.app.Application;
 
-import com.android.volley.Response;
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
+import com.example.rarct.gasprices.Databases.ProvincesEntity;
+import com.example.rarct.gasprices.Databases.TownsEntity;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainModel{
 
-    private final Resources resources;
+    private Repository repository;
 
-    private void recoverCommunities(Response.Listener listener) {
+    private List<CommunitiesEntity> communitiesEntityList;
+    private List<ProvincesEntity> provincesEntityList;
+    private List<TownsEntity> townsEntityList;
 
+    public MainModel (Application application) {
+        //super(application);
+        repository = new Repository(application);
+
+        communitiesEntityList = repository.getCommunitiesEntityList();
+        provincesEntityList = repository.getProvincesEntityList();
+        townsEntityList = repository.getTownsEntityList();
     }
 
-    public MainModel(Context context) {
-        resources = context.getResources();
-    }
+    List<CommunitiesEntity> getCommunitiesEntityList() { return communitiesEntityList; }
+    public void insert(CommunitiesEntity community) { repository.insertCommunity(community); }
+
+    List<ProvincesEntity> getProvincesEntityList() { return provincesEntityList; }
+    public void insert(ProvincesEntity province) { repository.insertProvince(province); }
+
+    List<TownsEntity> getTownsEntityList() { return townsEntityList; }
+    public void insert(TownsEntity town) { repository.insertTown(town); }
 }
+
+

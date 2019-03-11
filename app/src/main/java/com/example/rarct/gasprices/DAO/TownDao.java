@@ -15,5 +15,5 @@ public interface TownDao {
     void insertTown(TownsEntity town);
 
     @Query("SELECT * FROM Towns LEFT JOIN Provinces ON Province_ID = provinces.ID ORDER BY Town_name")
-    List<TownsEntity> allTowns();
+    List<TownsEntity> getTownsEntityList();
 }

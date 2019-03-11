@@ -17,5 +17,5 @@ public interface ProvinceDao {
     void insertProvince(ProvincesEntity province);
 
     @Query("SELECT * FROM Provinces LEFT JOIN Community ON Communities_ID = community.ID ORDER BY Province_name")
-    List<ProvincesEntity> allProvinces();
+    List<ProvincesEntity> getProvincesEntityList();
 }

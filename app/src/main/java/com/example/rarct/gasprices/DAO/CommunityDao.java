@@ -20,5 +20,5 @@ public interface CommunityDao {
     void insertCommunity(CommunitiesEntity community);
 
     @Query("SELECT * FROM Community ORDER BY Community_name")
-    List<CommunitiesEntity> allCommunities();
+    List<CommunitiesEntity> getCommunitiesEntityList();
 }
