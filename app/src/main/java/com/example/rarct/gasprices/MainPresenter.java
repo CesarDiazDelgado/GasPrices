@@ -14,6 +14,4 @@ public class MainPresenter {
         this.model = model;
     }
 
-    public void saveState(Bundle outState) {
-    }
 }

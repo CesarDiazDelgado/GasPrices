@@ -1,11 +1,9 @@
 package com.example.rarct.gasprices;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
 
@@ -21,12 +19,6 @@ public class MainActivity extends Activity {
 
     private List<String> listStr;
     private MainPresenter mainPresenter;
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        mainPresenter.saveState(outState);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
