@@ -1,0 +1,135 @@
+Index: GasPrices/app/src/main/java/com/example/rarct/gasprices/CommunitiesEntity.java
+===================================================================
+--- GasPrices/app/src/main/java/com/example/rarct/gasprices/CommunitiesEntity.java	(revision fc1b955924cec74a0e1ba5806caae39e2a7f6b36)
++++ GasPrices/app/src/main/java/com/example/rarct/gasprices/CommunitiesEntity.java	(revision fc1b955924cec74a0e1ba5806caae39e2a7f6b36)
+@@ -1,23 +0,0 @@
+-package com.example.rarct.gasprices;
+-
+-import androidx.annotation.NonNull;
+-import androidx.room.ColumnInfo;
+-import androidx.room.Entity;
+-import androidx.room.Index;
+-import androidx.room.PrimaryKey;
+-
+-@Entity(indices = {@Index(value = "name", unique = true)})
+-public class CommunitiesEntity {
+-
+-    @NonNull
+-    @PrimaryKey
+-    @ColumnInfo (name = "ID")
+-    public int id;
+-
+-    @ColumnInfo (name = "Community name")
+-    private String name;
+-
+-    public CommunitiesEntity(String name) {
+-        this.name = name;
+-    }
+-}
+Index: GasPrices/app/src/main/java/com/example/rarct/gasprices/ProvincesEntity.java
+===================================================================
+--- GasPrices/app/src/main/java/com/example/rarct/gasprices/ProvincesEntity.java	(revision fc1b955924cec74a0e1ba5806caae39e2a7f6b36)
++++ GasPrices/app/src/main/java/com/example/rarct/gasprices/ProvincesEntity.java	(revision fc1b955924cec74a0e1ba5806caae39e2a7f6b36)
+@@ -1,28 +0,0 @@
+-package com.example.rarct.gasprices;
+-
+-import androidx.annotation.NonNull;
+-import androidx.room.ColumnInfo;
+-import androidx.room.Entity;
+-import androidx.room.ForeignKey;
+-import androidx.room.PrimaryKey;
+-
+-@Entity(foreignKeys =
+-                    @ForeignKey(
+-                            entity = CommunitiesEntity.class,
+-                            parentColumns = "ID",
+-                            childColumns = "Communities_ID"),
+-                    tableName = "provincesID")
+-
+-public class ProvincesEntity {
+-
+-    @NonNull
+-    @PrimaryKey
+-    @ColumnInfo (name = "ID")
+-    int id;
+-
+-    @ColumnInfo (name = "Province_name")
+-    private String name;
+-
+-    @ColumnInfo (name = "Communities_ID")
+-    private int communityID;
+-}
+Index: GasPrices/app/src/main/java/com/example/rarct/gasprices/TownsEntity.java
+===================================================================
+--- GasPrices/app/src/main/java/com/example/rarct/gasprices/TownsEntity.java	(revision fc1b955924cec74a0e1ba5806caae39e2a7f6b36)
++++ GasPrices/app/src/main/java/com/example/rarct/gasprices/TownsEntity.java	(revision fc1b955924cec74a0e1ba5806caae39e2a7f6b36)
+@@ -1,28 +0,0 @@
+-package com.example.rarct.gasprices;
+-
+-import androidx.annotation.NonNull;
+-import androidx.room.ColumnInfo;
+-import androidx.room.Entity;
+-import androidx.room.ForeignKey;
+-import androidx.room.PrimaryKey;
+-
+-@Entity(foreignKeys =
+-                    @ForeignKey(
+-                            entity = ProvincesEntity.class,
+-                            parentColumns = "ID", //my parent id
+-                            childColumns = "Province_ID"), //my id
+-                    tableName = "ID")
+-
+-public class TownsEntity {
+-
+-    @NonNull
+-    @PrimaryKey
+-    @ColumnInfo (name = "ID")
+-    int id;
+-
+-    @ColumnInfo (name = "Town_name")
+-    private String name;
+-
+-    @ColumnInfo (name = "Province_ID")
+-    private int provinceID;
+-}
+Index: GasPrices/app/src/main/java/com/example/rarct/gasprices/GasPrices.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- GasPrices/app/src/main/java/com/example/rarct/gasprices/GasPrices.java	(revision fc1b955924cec74a0e1ba5806caae39e2a7f6b36)
++++ GasPrices/app/src/main/java/com/example/rarct/gasprices/GasPrices.java	(date 1551714716292)
+@@ -16,6 +16,8 @@
+ import java.util.List;
+ import java.util.Vector;
+ 
++import androidx.room.Room;
++
+ public class GasPrices extends Activity {
+ 
+     private List<String> listStr;
+@@ -31,6 +33,8 @@
+         Spinner spinnerCommunity = findViewById(R.id.spinnerCommunity);
+         spinnerCommunity.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listStr));
+ 
++        DAO.AppDatabase db = Room.databaseBuilder(this, DAO.AppDatabase.class, "database-name").build();
++
+     }
+ 
+     public List<String> readLine(String path, Context context) {
+Index: GasPrices/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- GasPrices/.idea/misc.xml	(revision fc1b955924cec74a0e1ba5806caae39e2a7f6b36)
++++ GasPrices/.idea/misc.xml	(date 1551197603652)
+@@ -29,7 +29,7 @@
+       </value>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
