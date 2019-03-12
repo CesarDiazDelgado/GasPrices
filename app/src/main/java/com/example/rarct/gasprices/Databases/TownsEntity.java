@@ -17,11 +17,10 @@ import androidx.room.PrimaryKey;
 
 public class TownsEntity implements Comparable{
 
-
     @NonNull
     @PrimaryKey
     @ColumnInfo (name = "ID")
-    int id;
+    private int id;
 
     @ColumnInfo (name = "Town_name")
     private String name;
@@ -29,10 +28,10 @@ public class TownsEntity implements Comparable{
     @ColumnInfo (name = "Province_ID")
     private int provinceID;
 
-    public TownsEntity(int id, String name){// ,int province_id) {
+    public TownsEntity(int id, String name, int province_id) {
         this.id = id ;
         this.name = name;
-        //provinceID = province_id;
+        this.provinceID = province_id;
     }
 
     @NonNull

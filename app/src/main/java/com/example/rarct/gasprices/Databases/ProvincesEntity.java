@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
@@ -20,7 +21,7 @@ public class ProvincesEntity {
     @NonNull
     @PrimaryKey
     @ColumnInfo (name = "ID")
-    int id;
+    private int id;
 
     @ColumnInfo (name = "Province_name")
     private String name;
@@ -28,12 +29,11 @@ public class ProvincesEntity {
     @ColumnInfo (name = "Communities_ID")
     private int communityID;
 
-    public ProvincesEntity(int id, String name) {// ,int community_id) {
+    public ProvincesEntity(int id, String name, int community_id) {
         this.id = id ;
         this.name = name;
-        //this.communityID = community_id;
+        this.communityID = community_id;
     }
-
 
     @NonNull
     public int getId() {
