@@ -1,6 +1,7 @@
 package com.example.rarct.gasprices;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 
 import com.example.rarct.gasprices.DAO.CommunityDao;
@@ -9,6 +10,11 @@ import com.example.rarct.gasprices.DAO.TownDao;
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
 import com.example.rarct.gasprices.Databases.ProvincesEntity;
 import com.example.rarct.gasprices.Databases.TownsEntity;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -53,15 +59,73 @@ public abstract class AppDatabase extends RoomDatabase {
     private static class PopulateCommunityDbAsync extends AsyncTask<Void, Void, Void> {
 
         private final CommunityDao communityDao;
+        private final ProvinceDao provinceDao;
+        private final TownDao townDao;
 
         PopulateCommunityDbAsync(AppDatabase db) {
             communityDao = db.communityDao();
+            provinceDao = db.provinceDao();
+            townDao = db.townDao();
         }
 
         @Override
         protected Void doInBackground(final Void... params) {
-            CommunitiesEntity community = new CommunitiesEntity(17, "Murcia");
-            communityDao.insertCommunity(community);
+
+            Resources r = Resources.getSystem();
+            //Communities
+            try {
+                InputStream is = r.openRawResource(R.raw.communities);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                String line;
+                String[] s;
+                CommunitiesEntity c;
+
+                while ((line = reader.readLine()) != null) {
+                    s = line.split("#");
+                    c = new CommunitiesEntity(Integer.parseInt(s[0]), s[1]);
+                    communityDao.insertCommunity(c);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //Provinces
+            try {
+                InputStream is = r.openRawResource(R.raw.provinces);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                String line;
+                String[] s;
+                ProvincesEntity p;
+
+                while ((line = reader.readLine()) != null) {
+                    s = line.split("#");
+                    p = new ProvincesEntity(Integer.parseInt(s[0]), s[1], Integer.parseInt(s[2]));
+                    provinceDao.insertProvince(p);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //Towns
+            try {
+                InputStream is = r.openRawResource(R.raw.towns);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                String line;
+                String[] s;
+                TownsEntity t;
+
+                while ((line = reader.readLine()) != null) {
+                    s = line.split("#");
+                    t = new TownsEntity(Integer.parseInt(s[0]), s[1], Integer.parseInt(s[2]));
+                    townDao.insertTown(t);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             return null;
         }
     }
