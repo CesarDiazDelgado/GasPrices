@@ -6,6 +6,7 @@ import com.example.rarct.gasprices.Databases.CommunitiesEntity;
 import com.example.rarct.gasprices.Databases.ProvincesEntity;
 import com.example.rarct.gasprices.Databases.TownsEntity;
 
+import java.io.InputStream;
 import java.util.List;
 
 public class MainModel{
@@ -25,10 +26,6 @@ public class MainModel{
         townsEntityList = repository.getTownsEntityList();
     }
 
-    public MainModel() {
-
-    }
-
     List<CommunitiesEntity> getCommunitiesEntityList() { return communitiesEntityList; }
     public void insert(CommunitiesEntity community) { repository.insertCommunity(community); }
 
@@ -37,6 +34,7 @@ public class MainModel{
 
     List<TownsEntity> getTownsEntityList() { return townsEntityList; }
     public void insert(TownsEntity town) { repository.insertTown(town); }
+
 }
 
 

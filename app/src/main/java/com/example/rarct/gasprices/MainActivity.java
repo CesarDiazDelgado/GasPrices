@@ -1,11 +1,16 @@
 package com.example.rarct.gasprices;
 
-import android.app.Activity;
+import android.app.Application;
 import android.os.Bundle;
+import android.app.Activity;
+//import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,16 +25,39 @@ public class MainActivity extends Activity {
     private List<String> listStr;
     private MainPresenter mainPresenter;
 
+    TextView buttonShowPrices;
+    Spinner spinnerCommunity;
+
+    Application application;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+                    // recovering the instance state
+        if (savedInstanceState != null) {
+            mainPresenter = new MainPresenter(this, null);
+            //mainPresenter.setState(savedInstanceState);
+        }else {
+            mainPresenter = new MainPresenter(this, new MainModel(application));
+        }
+
         setContentView(R.layout.activity_gas_prices);
 
-        Spinner spinnerCommunity = findViewById(R.id.spinnerCommunity);
+        spinnerCommunity = findViewById(R.id.spinnerCommunity);
+        buttonShowPrices  = findViewById(R.id.buttonShowPrices);
+
         spinnerCommunity.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, readLine()));
 
         AppDatabase.getDatabase(this);
 
+    }
+
+    public void ShowPricesClick(View view) {
+
+        mainPresenter.showPricesClick();
+
+        //mainPresenter.updateView();
     }
 
     public List<String> readLine() {
