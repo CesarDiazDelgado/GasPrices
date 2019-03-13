@@ -1,6 +1,7 @@
 package com.example.rarct.gasprices;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 //import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,6 @@ public class MainActivity extends Activity {
     TextView buttonShowPrices;
     Spinner spinnerCommunity;
 
-    Application application;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
             mainPresenter = new MainPresenter(this, null);
             //mainPresenter.setState(savedInstanceState);
         }else {
-            mainPresenter = new MainPresenter(this, new MainModel(application));
+            mainPresenter = new MainPresenter(this, new MainModel(this.getBaseContext()));
         }
 
         setContentView(R.layout.activity_gas_prices);
@@ -49,7 +49,6 @@ public class MainActivity extends Activity {
 
         spinnerCommunity.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, readLine()));
 
-        AppDatabase.getDatabase(this);
 
     }
 

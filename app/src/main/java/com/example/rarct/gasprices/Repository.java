@@ -1,9 +1,9 @@
-package com.example.rarct.gasprices;
+/*package com.example.rarct.gasprices;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
-import com.example.rarct.gasprices.DAO.CommunityDao;
+import com.example.rarct.gasprices.DAO.myDao;
 import com.example.rarct.gasprices.DAO.ProvinceDao;
 import com.example.rarct.gasprices.DAO.TownDao;
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
@@ -109,3 +109,4 @@ public class Repository {
         }
     }
 }
+*/

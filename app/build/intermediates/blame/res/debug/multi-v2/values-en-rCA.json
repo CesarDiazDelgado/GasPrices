@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
+            "outputFile": "C:\\Users\\Usuario\\Desktop\\UNI\\Tercero\\2ndoSemestre\\AppAndroid\\GasPrices\\Gas-Prices\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\37c67b46d945a6b438b73c36a87d4de5\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c2192ab4d6a80246f2fa378879f3d443\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
