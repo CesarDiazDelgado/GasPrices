@@ -8,8 +8,8 @@ import android.os.AsyncTask;
 import com.example.rarct.gasprices.DAO.myDao;
 
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
-import com.example.rarct.gasprices.Databases.ProvincesEntity;
-import com.example.rarct.gasprices.Databases.TownsEntity;
+//import com.example.rarct.gasprices.Databases.ProvincesEntity;
+//import com.example.rarct.gasprices.Databases.TownsEntity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,74 +29,72 @@ public class MainModel{
     private AppDatabase INSTANCE;
 
     public List<CommunitiesEntity> communitiesEntityList;
-    public List<ProvincesEntity> provincesEntityList;
-    public List<TownsEntity> townsEntityList;
+    //public List<ProvincesEntity> provincesEntityList;
+    //public List<TownsEntity> townsEntityList;
 
     private myDao MyDao;
 
 
     public MainModel (Context context) {
-        MyDao = INSTANCE.myDao();
 
-        communitiesEntityList = getCommunitiesEntityList();
-        provincesEntityList = getProvincesEntityList();
-        townsEntityList = getTownsEntityList();
 
         if (INSTANCE == null) {
             INSTANCE =
                     Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "Gas_Prices_Database").addCallback(sRoomDatabaseCallback).build();
 
+            MyDao = INSTANCE.myDao();
+
+            communitiesEntityList = getCommunitiesEntityList();
+            //provincesEntityList = getProvincesEntityList();
+            //townsEntityList = getTownsEntityList();
         }
     }
 
-
-
     public List<CommunitiesEntity> getCommunitiesEntityList() {
-        return MyDao.getCommunitiesEntityList();
+        return (List<CommunitiesEntity>) new getAsyncTaskCommunity(MyDao).execute(); /*MyDao.getCommunitiesEntityList();*/
     }
 
     public void insert(CommunitiesEntity community) { MyDao.insertCommunity(community); }
 
-    public List<ProvincesEntity> getProvincesEntityList() {
+    private class getAsyncTaskCommunity extends AsyncTask<Void, Void, List<CommunitiesEntity>> {
+
+        private myDao mAsyncTaskDao;
+
+        getAsyncTaskCommunity(myDao dao) {
+            mAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected List<CommunitiesEntity> doInBackground(Void... params) {
+            return mAsyncTaskDao.getCommunitiesEntityList();
+        }
+    }
+
+      /* public List<ProvincesEntity> getProvincesEntityList() {
         return provincesEntityList;
     }
-    public void insert(ProvincesEntity province) { MyDao.insertProvince(province); }
+    //public void insert(ProvincesEntity province) { MyDao.insertProvince(province); }
 
     public List<TownsEntity> getTownsEntityList() {
         return townsEntityList;
     }
-    public void insert(TownsEntity town) {MyDao.insertTown(town); }
+    //public void insert(TownsEntity town) {MyDao.insertTown(town); }
 
 
-    public void insertCommunity (CommunitiesEntity communitiesEntity) {
-        new insertAsyncTaskCommunity(MyDao).execute(communitiesEntity);
+    public void insertCommunity () {
+        new getAsyncTaskCommunity(MyDao).execute();
     }
 
-    public void insertProvince (ProvincesEntity provincesEntity) {
+    /*public void insertProvince (ProvincesEntity provincesEntity) {
         new insertAsyncTaskProvince(MyDao).execute(provincesEntity);
     }
 
     public void insertTown (TownsEntity townsEntity) {
         new insertAsyncTaskTown(MyDao).execute(townsEntity);
     }
+*/
 
-
-    private static class insertAsyncTaskCommunity extends AsyncTask<CommunitiesEntity, Void, Void> {
-
-        private myDao mAsyncTaskDao;
-
-        insertAsyncTaskCommunity(myDao dao) {
-            mAsyncTaskDao = dao;
-        }
-
-        @Override
-        protected Void doInBackground (final CommunitiesEntity... params) {
-            mAsyncTaskDao.insertCommunity(params[0]);
-            return null;
-        }
-    }
-
-    private static class insertAsyncTaskProvince extends AsyncTask<ProvincesEntity, Void, Void> {
+   /* private static class insertAsyncTaskProvince extends AsyncTask<ProvincesEntity, Void, Void> {
 
         private myDao mAsyncTaskDao;
 
@@ -124,7 +122,7 @@ public class MainModel{
             mAsyncTaskDao.insertTown(params[0]);
             return null;
         }
-    }
+    }*/
 
     //Populate database
     private RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback(){
@@ -137,9 +135,9 @@ public class MainModel{
 
     private  class PopulateCommunityDbAsync extends AsyncTask<Void, Void, Void> {
 
-        private final myDao MyDao;
+        //private final myDao MyDao;
 
-        PopulateCommunityDbAsync(AppDatabase db) {
+        PopulateCommunityDbAsync(AppDatabase INSTANCE) {
             MyDao = INSTANCE.myDao();
         }
 
@@ -164,7 +162,7 @@ public class MainModel{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            /*
             //Provinces
             try {
                 InputStream is = r.openRawResource(R.raw.provinces);
@@ -200,7 +198,7 @@ public class MainModel{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+*/
             return null;
         }
     }

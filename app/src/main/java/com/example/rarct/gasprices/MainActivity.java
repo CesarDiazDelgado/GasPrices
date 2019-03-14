@@ -11,8 +11,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
-import com.example.rarct.gasprices.Databases.ProvincesEntity;
-import com.example.rarct.gasprices.Databases.TownsEntity;
+//import com.example.rarct.gasprices.Databases.ProvincesEntity;
+//import com.example.rarct.gasprices.Databases.TownsEntity;
 
 
 import java.io.BufferedReader;
@@ -24,10 +24,6 @@ import java.util.List;
 
 
 public class MainActivity extends Activity {
-
-    private List<CommunitiesEntity> CommunityList;
-    private List<ProvincesEntity> ProvincesList;
-    private List<TownsEntity> TownList;
 
     private MainPresenter mainPresenter;
 
@@ -52,7 +48,7 @@ public class MainActivity extends Activity {
         spinnerCommunity = findViewById(R.id.spinnerCommunity);
         buttonShowPrices  = findViewById(R.id.buttonShowPrices);
 
-        spinnerCommunity.setAdapter(new ArrayAdapter<CommunitiesEntity>(this, android.R.layout.simple_spinner_item, readListComunity()));
+        spinnerCommunity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readListCommunity()));
 
     }
 
@@ -63,7 +59,7 @@ public class MainActivity extends Activity {
         //mainPresenter.updateView();
     }
 
-    public List<CommunitiesEntity> readListComunity() {
+    public List<CommunitiesEntity> readListCommunity() {
 
        return mainPresenter.getCommunities();
 

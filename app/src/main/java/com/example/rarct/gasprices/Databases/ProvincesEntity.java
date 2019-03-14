@@ -7,7 +7,7 @@ import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
+/*
 @Entity(foreignKeys =
                     @ForeignKey(
                             entity = CommunitiesEntity.class,
@@ -60,3 +60,4 @@ public class ProvincesEntity {
         this.communityID = communityID;
     }
 }
+*/

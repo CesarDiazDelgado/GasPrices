@@ -6,7 +6,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
+/*
 @Entity(foreignKeys =
                     @ForeignKey(
                             entity = ProvincesEntity.class,
@@ -64,3 +64,4 @@ public class TownsEntity implements Comparable{
         return 0;
     }
 }
+*/

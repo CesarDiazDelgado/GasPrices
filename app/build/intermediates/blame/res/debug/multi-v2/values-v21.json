@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Usuario\\Desktop\\UNI\\Tercero\\2ndoSemestre\\AppAndroid\\GasPrices\\Gas-Prices\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c2192ab4d6a80246f2fa378879f3d443\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\37c67b46d945a6b438b73c36a87d4de5\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
