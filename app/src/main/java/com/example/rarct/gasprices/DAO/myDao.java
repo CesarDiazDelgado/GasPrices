@@ -31,9 +31,9 @@ public interface myDao {
     @Query("SELECT * FROM Community ORDER BY Community_name")
     List<CommunitiesEntity> getCommunitiesEntityList();
 
-    @Query("SELECT * FROM Provinces LEFT JOIN Community ON Communities_ID = community.ID ORDER BY Province_name")
-    List<ProvincesEntity> getProvincesEntityList();
+    @Query("SELECT * FROM Provinces WHERE Communities_ID  == :community_id ORDER BY Province_name")
+    List<ProvincesEntity> getProvincesEntityList(int community_id);
 
-    @Query("SELECT * FROM Towns LEFT JOIN Provinces ON Province_ID = provinces.ID ORDER BY Town_name")
-    List<TownsEntity> getTownsEntityList();
+    @Query("SELECT * FROM Towns WHERE Province_ID == :provinces_id ORDER BY Town_name")
+    List<TownsEntity> getTownsEntityList(int provinces_id);
 }

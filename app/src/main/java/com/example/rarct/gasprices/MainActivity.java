@@ -11,6 +11,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
+import com.example.rarct.gasprices.Databases.ProvincesEntity;
+import com.example.rarct.gasprices.Databases.TownsEntity;
 
 
 import java.io.BufferedReader;
@@ -23,7 +25,10 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private List<String> listStr;
+    private List<CommunitiesEntity> CommunityList;
+    private List<ProvincesEntity> ProvincesList;
+    private List<TownsEntity> TownList;
+
     private MainPresenter mainPresenter;
 
     TextView buttonShowPrices;
@@ -39,7 +44,7 @@ public class MainActivity extends Activity {
             mainPresenter = new MainPresenter(this, null);
             //mainPresenter.setState(savedInstanceState);
         }else {
-            mainPresenter = new MainPresenter(this, new MainModel(this.getBaseContext()));
+            mainPresenter = new MainPresenter(this, new MainModel(getBaseContext()));
         }
 
         setContentView(R.layout.activity_gas_prices);
@@ -47,8 +52,7 @@ public class MainActivity extends Activity {
         spinnerCommunity = findViewById(R.id.spinnerCommunity);
         buttonShowPrices  = findViewById(R.id.buttonShowPrices);
 
-        spinnerCommunity.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, readLine()));
-
+        spinnerCommunity.setAdapter(new ArrayAdapter<CommunitiesEntity>(this, android.R.layout.simple_spinner_item, readListComunity()));
 
     }
 
@@ -59,27 +63,10 @@ public class MainActivity extends Activity {
         //mainPresenter.updateView();
     }
 
-    public List<String> readLine() {
-        List<String> mLines = new ArrayList<>();
+    public List<CommunitiesEntity> readListComunity() {
 
-        try {
-            InputStream is = getResources().openRawResource(R.raw.communities);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-            String line;
-            String[] s = new String[1];
-            CommunitiesEntity c;
+       return mainPresenter.getCommunities();
 
-            while ((line = reader.readLine()) != null) {
-                s = line.split("#");
-                c = new CommunitiesEntity(Integer.parseInt(s[0]), s[1]);
-                mLines.add(s[1]);
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return mLines;
     }
 
 }

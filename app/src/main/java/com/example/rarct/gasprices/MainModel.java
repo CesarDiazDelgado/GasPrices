@@ -15,6 +15,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -22,12 +23,12 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-public class MainModel{
+
+public class MainModel {
 
     private AppDatabase INSTANCE;
 
-
-    private List<CommunitiesEntity> communitiesEntityList;
+    private List<CommunitiesEntity> communitiesEntityList = new ArrayList<CommunitiesEntity>();
     private List<ProvincesEntity> provincesEntityList;
     private List<TownsEntity> townsEntityList;
 
@@ -49,9 +50,6 @@ public class MainModel{
             INSTANCE =
                     Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "Gas_Prices_Database").addCallback(sRoomDatabaseCallback).build();
 
-            communitiesEntityList = getCommunitiesEntityList();
-            provincesEntityList = getProvincesEntityList();
-            townsEntityList = getTownsEntityList();
         }
     }
 
