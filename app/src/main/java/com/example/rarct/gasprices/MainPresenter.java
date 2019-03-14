@@ -19,7 +19,7 @@ public class MainPresenter {
     }
 
     public List<CommunitiesEntity> getCommunities() {
-        return model.getCommunitiesEntityList();   //Lo que realmente debe hacerse al clickar el boton
+        return model.communitiesEntityList;   //Lo que realmente debe hacerse al clickar el boton
     }
 
     public List<ProvincesEntity> getProvinces() {

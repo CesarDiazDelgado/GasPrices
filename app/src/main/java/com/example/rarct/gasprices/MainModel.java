@@ -24,22 +24,18 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 
-public class MainModel {
+public class MainModel{
 
     private AppDatabase INSTANCE;
 
-    private List<CommunitiesEntity> communitiesEntityList = new ArrayList<CommunitiesEntity>();
-    private List<ProvincesEntity> provincesEntityList;
-    private List<TownsEntity> townsEntityList;
+    public List<CommunitiesEntity> communitiesEntityList;
+    public List<ProvincesEntity> provincesEntityList;
+    public List<TownsEntity> townsEntityList;
 
     private myDao MyDao;
 
 
     public MainModel (Context context) {
-        INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                AppDatabase.class, "database-name").build();
-
-
         MyDao = INSTANCE.myDao();
 
         communitiesEntityList = getCommunitiesEntityList();
@@ -56,10 +52,10 @@ public class MainModel {
 
 
     public List<CommunitiesEntity> getCommunitiesEntityList() {
-        return communitiesEntityList;
+        return MyDao.getCommunitiesEntityList();
     }
-    public void insert(CommunitiesEntity community) { MyDao.insertCommunity(community); }
 
+    public void insert(CommunitiesEntity community) { MyDao.insertCommunity(community); }
 
     public List<ProvincesEntity> getProvincesEntityList() {
         return provincesEntityList;

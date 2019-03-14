@@ -24,7 +24,7 @@ public interface myDao {
     @Insert (onConflict = REPLACE)
     void insertProvince(ProvincesEntity province);
 
-    @Insert
+    @Insert (onConflict = REPLACE)
     void insertTown(TownsEntity town);
 
 
