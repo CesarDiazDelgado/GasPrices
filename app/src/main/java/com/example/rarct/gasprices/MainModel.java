@@ -44,7 +44,7 @@ public class MainModel{
 
             MyDao = INSTANCE.myDao();
 
-            communitiesEntityList = getCommunitiesEntityList();
+            //communitiesEntityList = getCommunitiesEntityList();
             //provincesEntityList = getProvincesEntityList();
             //townsEntityList = getTownsEntityList();
         }

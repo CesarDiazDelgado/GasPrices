@@ -29,7 +29,9 @@ public class MainActivity extends Activity {
 
     TextView buttonShowPrices;
     Spinner spinnerCommunity;
+    Spinner spinnerTypeFuel;
 
+    GasType[] gasType = GasType.values();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,11 @@ public class MainActivity extends Activity {
 
         spinnerCommunity = findViewById(R.id.spinnerCommunity);
         buttonShowPrices  = findViewById(R.id.buttonShowPrices);
+        spinnerTypeFuel = findViewById(R.id.spinnerTypeOfFuel);
 
-        spinnerCommunity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readListCommunity()));
+        //spinnerCommunity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readListCommunity()));
+
+        spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
 
     }
 
@@ -63,6 +68,15 @@ public class MainActivity extends Activity {
 
        return mainPresenter.getCommunities();
 
+    }
+
+    public String[] Labels() {
+        String[] labels = new String[gasType.length];
+        for (int i = 0; i < gasType.length; i++) {
+            labels[i] = (gasType[i].label());
+        }
+
+        return  labels;
     }
 
 }
