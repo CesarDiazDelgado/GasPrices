@@ -29,15 +29,12 @@ public class MainModel{
 
     private AppDatabase INSTANCE;
 
-
     //public List<ProvincesEntity> provincesEntityList;
     //public List<TownsEntity> townsEntityList;
 
     private myDao MyDao;
 
-
     public MainModel (Context context) {
-
 
         if (INSTANCE == null) {
             INSTANCE =
@@ -52,8 +49,6 @@ public class MainModel{
         getAsyncTaskCommunity asyncTask = new getAsyncTaskCommunity(response);
         asyncTask.execute();
     }
-
-    public void insert(CommunitiesEntity community) { MyDao.insertCommunity(community); }
 
     private class getAsyncTaskCommunity extends AsyncTask<Void, Void, List<CommunitiesEntity>> {
 
@@ -130,7 +125,6 @@ public class MainModel{
     }*/
     }
 
-
     //Populate database
     private RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback(){
         @Override
@@ -141,8 +135,6 @@ public class MainModel{
     };
 
     private class PopulateCommunityDbAsync extends AsyncTask<Void, Void, Void> {
-
-        //private final myDao MyDao;
 
         PopulateCommunityDbAsync(AppDatabase INSTANCE) {
             MyDao = INSTANCE.myDao();
@@ -167,8 +159,26 @@ public class MainModel{
                 MyDao.insertCommunity(c);
             }
             scanner.close();
+            return null;
+        }
+    }
 
-            /*
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
             //Provinces
             try {
                 InputStream is = r.openRawResource(R.raw.provinces);
@@ -205,10 +215,4 @@ public class MainModel{
                 e.printStackTrace();
             }
 */
-            return null;
-        }
-    }
-
-}
-
 
