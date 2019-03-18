@@ -38,12 +38,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-                    // recovering the instance state
+        // recovering the instance state
         if (savedInstanceState != null) {
             mainPresenter = new MainPresenter(this, null);
             //mainPresenter.setState(savedInstanceState);
         }else {
-            mainPresenter = new MainPresenter(this, new MainModel(getBaseContext()));
+            mainPresenter = new MainPresenter(this, new MainModel.getInstance(getBaseContext()));
         }
 
         setContentView(R.layout.activity_gas_prices);
@@ -51,8 +51,6 @@ public class MainActivity extends Activity {
         spinnerCommunity = findViewById(R.id.spinnerCommunity);
         buttonShowPrices  = findViewById(R.id.buttonShowPrices);
         spinnerTypeFuel = findViewById(R.id.spinnerTypeOfFuel);
-
-        //spinnerCommunity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readListCommunity()));
 
         mainPresenter.getCommunitiesEntityList();
 
