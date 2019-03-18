@@ -1,5 +1,6 @@
 package com.example.rarct.gasprices;
 
+import android.Manifest;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
@@ -27,22 +28,27 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 public class MainModel{
 
-    private AppDatabase INSTANCE;
+    private AppDatabase appDatabase;
+    private static MainModel INSTANCE;
+    private myDao MyDao;
+    private final Resources resources;
 
     //public List<ProvincesEntity> provincesEntityList;
     //public List<TownsEntity> townsEntityList;
 
-    private myDao MyDao;
+    private MainModel (Context context) {
 
-    public MainModel (Context context) {
+        appDatabase = Room.databaseBuilder(context, AppDatabase.class, "Gas_Prices_Database").build();
 
+        MyDao = appDatabase.myDao();
+        resources = context.getResources();
+    }
+
+    public static MainModel getInstance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE =
-                    Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "Gas_Prices_Database").addCallback(sRoomDatabaseCallback).build();
-
-            MyDao = INSTANCE.myDao();
-
+            INSTANCE = new MainModel(context);
         }
+        return INSTANCE;
     }
 
     public void getCommunitiesEntityList(final Listener<List<CommunitiesEntity>> response) {
@@ -124,7 +130,7 @@ public class MainModel{
         }
     }*/
     }
-
+/*
     //Populate database
     private RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback(){
         @Override
@@ -161,7 +167,7 @@ public class MainModel{
             scanner.close();
             return null;
         }
-    }
+    }*/
 
 }
 
