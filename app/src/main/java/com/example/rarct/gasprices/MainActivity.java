@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Activity;
 //import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -53,6 +54,20 @@ public class MainActivity extends Activity {
 
         //spinnerCommunity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readListCommunity()));
 
+        mainPresenter.getCommunitiesEntityList();
+
+        spinnerCommunity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
 
     }
@@ -62,12 +77,6 @@ public class MainActivity extends Activity {
         mainPresenter.showPricesClick();
 
         //mainPresenter.updateView();
-    }
-
-    public List<CommunitiesEntity> readListCommunity() {
-
-       return mainPresenter.getCommunities();
-
     }
 
     public String[] Labels() {
