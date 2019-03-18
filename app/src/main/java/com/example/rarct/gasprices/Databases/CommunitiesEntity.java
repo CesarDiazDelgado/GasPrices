@@ -31,4 +31,8 @@ public class CommunitiesEntity {
         return name;
     }
 
+    public String toString() {
+        return name;
+    }
+
 }
