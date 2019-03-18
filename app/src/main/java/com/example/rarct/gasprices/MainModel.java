@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import androidx.annotation.NonNull;
 import androidx.room.Room;
@@ -28,7 +29,7 @@ public class MainModel{
 
     private AppDatabase INSTANCE;
 
-    public List<CommunitiesEntity> communitiesEntityList;
+
     //public List<ProvincesEntity> provincesEntityList;
     //public List<TownsEntity> townsEntityList;
 
@@ -44,33 +45,37 @@ public class MainModel{
 
             MyDao = INSTANCE.myDao();
 
-            //communitiesEntityList = getCommunitiesEntityList();
-            //provincesEntityList = getProvincesEntityList();
-            //townsEntityList = getTownsEntityList();
         }
     }
 
-    public List<CommunitiesEntity> getCommunitiesEntityList() {
-        return (List<CommunitiesEntity>) new getAsyncTaskCommunity(MyDao).execute(); /*MyDao.getCommunitiesEntityList();*/
+    public void getCommunitiesEntityList(final Listener<List<CommunitiesEntity>> response) {
+        getAsyncTaskCommunity asyncTask = new getAsyncTaskCommunity(response);
+        asyncTask.execute();
     }
 
     public void insert(CommunitiesEntity community) { MyDao.insertCommunity(community); }
 
     private class getAsyncTaskCommunity extends AsyncTask<Void, Void, List<CommunitiesEntity>> {
 
-        private myDao mAsyncTaskDao;
+        private Listener<List<CommunitiesEntity>> mAsyncTaskListener;
 
-        getAsyncTaskCommunity(myDao dao) {
-            mAsyncTaskDao = dao;
+        getAsyncTaskCommunity(Listener<List<CommunitiesEntity>> response) {
+            mAsyncTaskListener = response;
         }
 
         @Override
         protected List<CommunitiesEntity> doInBackground(Void... params) {
-            return mAsyncTaskDao.getCommunitiesEntityList();
+            return MyDao.getCommunitiesEntityList();
+        }
+
+        @Override
+        protected void onPostExecute(List<CommunitiesEntity> communityList) {
+            mAsyncTaskListener.onResponse(communityList);
         }
     }
 
-      /* public List<ProvincesEntity> getProvincesEntityList() {
+    void Basura() {
+        /* public List<ProvincesEntity> getProvincesEntityList() {
         return provincesEntityList;
     }
     //public void insert(ProvincesEntity province) { MyDao.insertProvince(province); }
@@ -123,17 +128,19 @@ public class MainModel{
             return null;
         }
     }*/
+    }
+
 
     //Populate database
     private RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback(){
-                @Override
-                public void onOpen (@NonNull SupportSQLiteDatabase db){
-                    super.onOpen(db);
-                    new PopulateCommunityDbAsync(INSTANCE).execute();
-                }
-            };
+        @Override
+        public void onOpen (@NonNull SupportSQLiteDatabase db){
+            super.onOpen(db);
+            new PopulateCommunityDbAsync(INSTANCE).execute();
+        }
+    };
 
-    private  class PopulateCommunityDbAsync extends AsyncTask<Void, Void, Void> {
+    private class PopulateCommunityDbAsync extends AsyncTask<Void, Void, Void> {
 
         //private final myDao MyDao;
 
@@ -146,22 +153,21 @@ public class MainModel{
 
             Resources r = Resources.getSystem();
             //Communities
-            try {
-                InputStream is = r.openRawResource(R.raw.communities);
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-                String line;
-                String[] s;
-                CommunitiesEntity c;
+            InputStream is = r.openRawResource(R.raw.communities);
+            Scanner scanner = new Scanner(is);
+            String[] line;
+            String s;
+            CommunitiesEntity c;
 
-                while ((line = reader.readLine()) != null) {
-                    s = line.split("#");
-                    c = new CommunitiesEntity(Integer.parseInt(s[0]), s[1]);
-                    MyDao.insertCommunity(c);
-                }
+            while (scanner.hasNextLine()) {
+                s = scanner.nextLine();
+                line = s.split("#");
 
-            } catch (IOException e) {
-                e.printStackTrace();
+                c = new CommunitiesEntity(Integer.parseInt(line[0]), line[1]);
+                MyDao.insertCommunity(c);
             }
+            scanner.close();
+
             /*
             //Provinces
             try {

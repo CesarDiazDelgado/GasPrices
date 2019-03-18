@@ -53,6 +53,8 @@ public class MainActivity extends Activity {
 
         //spinnerCommunity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readListCommunity()));
 
+        mainPresenter.getCommunitiesEntityList();
+
         spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
 
     }
@@ -64,9 +66,9 @@ public class MainActivity extends Activity {
         //mainPresenter.updateView();
     }
 
-    public List<CommunitiesEntity> readListCommunity() {
+    public List<CommunitiesEntity> readListCommunity(List<CommunitiesEntity> communityList) {
 
-       return mainPresenter.getCommunities();
+       return null;//mainPresenter.getCommunities();
 
     }
 
