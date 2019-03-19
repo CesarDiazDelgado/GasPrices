@@ -31,7 +31,6 @@ public class MainActivity extends Activity {
     TextView buttonShowPrices;
     Spinner spinnerCommunity;
     Spinner spinnerTypeFuel;
-    MainModel model;
 
     GasType[] gasType = GasType.values();
 
@@ -44,8 +43,7 @@ public class MainActivity extends Activity {
             mainPresenter = new MainPresenter(this, null);
             //mainPresenter.setState(savedInstanceState);
         }else {
-            model = MainModel.getInstance(this);
-            mainPresenter = new MainPresenter(this, model);
+            mainPresenter = new MainPresenter(this, MainModel.getInstance(getBaseContext()));
         }
 
         setContentView(R.layout.activity_gas_prices);

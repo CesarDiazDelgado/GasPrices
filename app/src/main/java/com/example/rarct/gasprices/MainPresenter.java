@@ -46,7 +46,7 @@ public class MainPresenter{
         model.getCommunitiesEntityList(new Listener<List<CommunitiesEntity>>() {
             @Override
             public void onResponse(List<CommunitiesEntity> response) {
-                view.spinnerCommunity.setAdapter(new ArrayAdapter<>(view.getApplicationContext(), android.R.layout.simple_spinner_item, response));
+                view.spinnerCommunity.setAdapter(new ArrayAdapter<CommunitiesEntity>(view.getApplicationContext(), android.R.layout.simple_spinner_item, response));
             }
         });
     }

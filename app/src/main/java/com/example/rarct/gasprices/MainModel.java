@@ -56,6 +56,11 @@ public class MainModel{
         asyncTask.execute();
     }
 
+    public void PopulateCommunities() {
+        PopulateCommunityDbAsync asyncTask = new PopulateCommunityDbAsync(appDatabase);
+        asyncTask.execute();
+    }
+
     private class getAsyncTaskCommunity extends AsyncTask<Void, Void, List<CommunitiesEntity>> {
 
         private Listener<List<CommunitiesEntity>> mAsyncTaskListener;
@@ -66,12 +71,43 @@ public class MainModel{
 
         @Override
         protected List<CommunitiesEntity> doInBackground(Void... params) {
+            if (MyDao.getCommunitiesEntityList().isEmpty()) {
+                PopulateCommunities();
+            }
             return MyDao.getCommunitiesEntityList();
         }
 
         @Override
         protected void onPostExecute(List<CommunitiesEntity> communityList) {
             mAsyncTaskListener.onResponse(communityList);
+        }
+    }
+
+    private class PopulateCommunityDbAsync extends AsyncTask<Void, Void, Void> {
+
+        PopulateCommunityDbAsync(AppDatabase database) {
+            MyDao = database.myDao();
+        }
+
+        @Override
+        protected Void doInBackground(final Void... params) {
+
+            //Communities
+            InputStream is = resources.openRawResource(R.raw.communities);
+            Scanner scanner = new Scanner(is);
+            String[] line;
+            String s;
+            CommunitiesEntity c;
+
+            while (scanner.hasNextLine()) {
+                s = scanner.nextLine();
+                line = s.split("#");
+
+                c = new CommunitiesEntity(Integer.parseInt(line[0]), line[1]);
+                MyDao.insertCommunity(c);
+            }
+            scanner.close();
+            return null;
         }
     }
 
@@ -140,34 +176,7 @@ public class MainModel{
         }
     };
 
-    private class PopulateCommunityDbAsync extends AsyncTask<Void, Void, Void> {
-
-        PopulateCommunityDbAsync(AppDatabase INSTANCE) {
-            MyDao = INSTANCE.myDao();
-        }
-
-        @Override
-        protected Void doInBackground(final Void... params) {
-
-            Resources r = Resources.getSystem();
-            //Communities
-            InputStream is = r.openRawResource(R.raw.communities);
-            Scanner scanner = new Scanner(is);
-            String[] line;
-            String s;
-            CommunitiesEntity c;
-
-            while (scanner.hasNextLine()) {
-                s = scanner.nextLine();
-                line = s.split("#");
-
-                c = new CommunitiesEntity(Integer.parseInt(line[0]), line[1]);
-                MyDao.insertCommunity(c);
-            }
-            scanner.close();
-            return null;
-        }
-    }*/
+   */
 
 }
 
