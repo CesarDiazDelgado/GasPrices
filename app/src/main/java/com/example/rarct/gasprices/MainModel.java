@@ -9,6 +9,8 @@ import android.os.AsyncTask;
 import com.example.rarct.gasprices.DAO.myDao;
 
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
+import com.example.rarct.gasprices.Databases.ProvincesEntity;
+import com.example.rarct.gasprices.Databases.TownsEntity;
 //import com.example.rarct.gasprices.Databases.ProvincesEntity;
 //import com.example.rarct.gasprices.Databases.TownsEntity;
 
@@ -51,6 +53,7 @@ public class MainModel{
         return INSTANCE;
     }
 
+    //Communities
     public void getCommunitiesEntityList(final Listener<List<CommunitiesEntity>> response) {
         getAsyncTaskCommunity asyncTask = new getAsyncTaskCommunity(response);
         asyncTask.execute();
@@ -61,6 +64,30 @@ public class MainModel{
         asyncTask.execute();
     }
 
+    //Provinces
+    public void getProvincesEntityList(int communityID, final Listener<List<ProvincesEntity>> response) {
+        getAsyncTaskProvince asyncTask = new getAsyncTaskProvince(response, communityID);
+        asyncTask.execute();
+    }
+
+    public void PopulateProvinces() {
+        PopulateProvincesDbAsync asyncTask = new PopulateProvincesDbAsync(appDatabase);
+        asyncTask.execute();
+    }
+
+    //Towns
+    public void getTownsEntityList(int provinceID, final Listener<List<TownsEntity>> response) {
+        getAsyncTaskTown asyncTask = new getAsyncTaskTown(response, provinceID);
+        asyncTask.execute();
+    }
+
+    public void PopulateTowns() {
+        PopulateTownsDbAsync asyncTask = new PopulateTownsDbAsync(appDatabase);
+        asyncTask.execute();
+    }
+
+
+    //Get communities, provinces and towns
     private class getAsyncTaskCommunity extends AsyncTask<Void, Void, List<CommunitiesEntity>> {
 
         private Listener<List<CommunitiesEntity>> mAsyncTaskListener;
@@ -83,6 +110,56 @@ public class MainModel{
         }
     }
 
+    private class getAsyncTaskProvince extends AsyncTask<Void, Void, List<ProvincesEntity>> {
+
+        private Listener<List<ProvincesEntity>> mAsyncTaskListener;
+        private int id;
+
+        getAsyncTaskProvince(Listener<List<ProvincesEntity>> response, int communityID) {
+            mAsyncTaskListener = response;
+            id = communityID;
+        }
+
+        @Override
+        protected List<ProvincesEntity> doInBackground(Void... params) {
+            if (MyDao.getProvincesEntityList(id).isEmpty()) {
+                PopulateProvinces();
+            }
+            return MyDao.getProvincesEntityList(id);
+        }
+
+        @Override
+        protected void onPostExecute(List<ProvincesEntity> provincesList) {
+            mAsyncTaskListener.onResponse(provincesList);
+        }
+    }
+
+    private class getAsyncTaskTown extends AsyncTask<Void, Void, List<TownsEntity>> {
+
+        private Listener<List<TownsEntity>> mAsyncTaskListener;
+        private int id;
+
+        getAsyncTaskTown(Listener<List<TownsEntity>> response, int provinceID) {
+            mAsyncTaskListener = response;
+            id = provinceID;
+        }
+
+        @Override
+        protected List<TownsEntity> doInBackground(Void... params) {
+            if (MyDao.getProvincesEntityList(id).isEmpty()) {
+                PopulateTowns();
+            }
+            return MyDao.getTownsEntityList(id);
+        }
+
+        @Override
+        protected void onPostExecute(List<TownsEntity> townsList) {
+            mAsyncTaskListener.onResponse(townsList);
+        }
+    }
+
+
+    //Populate communities, provinces and towns
     private class PopulateCommunityDbAsync extends AsyncTask<Void, Void, Void> {
 
         PopulateCommunityDbAsync(AppDatabase database) {
@@ -91,8 +168,6 @@ public class MainModel{
 
         @Override
         protected Void doInBackground(final Void... params) {
-
-            //Communities
             InputStream is = resources.openRawResource(R.raw.communities);
             Scanner scanner = new Scanner(is);
             String[] line;
@@ -111,116 +186,61 @@ public class MainModel{
         }
     }
 
-    void Basura() {
-        /* public List<ProvincesEntity> getProvincesEntityList() {
-        return provincesEntityList;
-    }
-    //public void insert(ProvincesEntity province) { MyDao.insertProvince(province); }
+    private class PopulateProvincesDbAsync extends AsyncTask<Void, Void, Void> {
 
-    public List<TownsEntity> getTownsEntityList() {
-        return townsEntityList;
-    }
-    //public void insert(TownsEntity town) {MyDao.insertTown(town); }
-
-
-    public void insertCommunity () {
-        new getAsyncTaskCommunity(MyDao).execute();
-    }
-
-    /*public void insertProvince (ProvincesEntity provincesEntity) {
-        new insertAsyncTaskProvince(MyDao).execute(provincesEntity);
-    }
-
-    public void insertTown (TownsEntity townsEntity) {
-        new insertAsyncTaskTown(MyDao).execute(townsEntity);
-    }
-*/
-
-   /* private static class insertAsyncTaskProvince extends AsyncTask<ProvincesEntity, Void, Void> {
-
-        private myDao mAsyncTaskDao;
-
-        insertAsyncTaskProvince(myDao dao) {
-            mAsyncTaskDao = dao;
+        PopulateProvincesDbAsync(AppDatabase database) {
+            MyDao = database.myDao();
         }
 
         @Override
-        protected Void doInBackground (final ProvincesEntity... params) {
-            mAsyncTaskDao.insertProvince(params[0]);
+        protected Void doInBackground(final Void... params) {
+            InputStream is = resources.openRawResource(R.raw.provinces);
+            Scanner scanner = new Scanner(is);
+            String[] line;
+            String s;
+            ProvincesEntity p;
+
+            while (scanner.hasNextLine()) {
+                s = scanner.nextLine();
+                line = s.split("#");
+
+                p = new ProvincesEntity(Integer.parseInt(line[0]), line[1], Integer.parseInt(line[2]));
+                MyDao.insertProvince(p);
+            }
+            scanner.close();
             return null;
         }
     }
 
-    private static class insertAsyncTaskTown extends AsyncTask<TownsEntity, Void, Void> {
+    private class PopulateTownsDbAsync extends AsyncTask<Void, Void, Void> {
 
-        private myDao mAsyncTaskDao;
-
-        insertAsyncTaskTown(myDao dao) {
-            mAsyncTaskDao = dao;
+        PopulateTownsDbAsync(AppDatabase database) {
+            MyDao = database.myDao();
         }
 
         @Override
-        protected Void doInBackground (final TownsEntity... params) {
-            mAsyncTaskDao.insertTown(params[0]);
+        protected Void doInBackground(final Void... params) {
+            InputStream is = resources.openRawResource(R.raw.towns);
+            Scanner scanner = new Scanner(is);
+            String[] line;
+            String s;
+            TownsEntity p;
+
+            while (scanner.hasNextLine()) {
+                s = scanner.nextLine();
+                line = s.split("#");
+
+                p = new TownsEntity(Integer.parseInt(line[0]), line[1], Integer.parseInt(line[2]));
+                MyDao.insertTown(p);
+            }
+            scanner.close();
             return null;
         }
-    }*/
     }
-/*
-    //Populate database
-    private RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback(){
-        @Override
-        public void onOpen (@NonNull SupportSQLiteDatabase db){
-            super.onOpen(db);
-            new PopulateCommunityDbAsync(INSTANCE).execute();
-        }
-    };
 
-   */
 
 }
 
 
 
-
-
-
-
-/*
-            //Provinces
-            try {
-                InputStream is = r.openRawResource(R.raw.provinces);
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-                String line;
-                String[] s;
-                ProvincesEntity p;
-
-                while ((line = reader.readLine()) != null) {
-                    s = line.split("#");
-                    p = new ProvincesEntity(Integer.parseInt(s[0]), s[1], Integer.parseInt(s[2]));
-                    MyDao.insertProvince(p);
-                }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            //Towns
-            try {
-                InputStream is = r.openRawResource(R.raw.towns);
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-                String line;
-                String[] s;
-                TownsEntity t;
-
-                while ((line = reader.readLine()) != null) {
-                    s = line.split("#");
-                    t = new TownsEntity(Integer.parseInt(s[0]), s[1], Integer.parseInt(s[2]));
-                    MyDao.insertTown(t);
-                }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-*/
 

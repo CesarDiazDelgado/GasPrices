@@ -8,10 +8,14 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
+import com.example.rarct.gasprices.Databases.ProvincesEntity;
+import com.example.rarct.gasprices.Databases.TownsEntity;
 //import com.example.rarct.gasprices.Databases.ProvincesEntity;
 //import com.example.rarct.gasprices.Databases.TownsEntity;
 
@@ -28,9 +32,12 @@ public class MainActivity extends Activity {
 
     private MainPresenter mainPresenter;
 
-    TextView buttonShowPrices;
+    Button buttonShowPrices;
+
     Spinner spinnerCommunity;
+    Spinner spinnerProvince;
     Spinner spinnerTypeFuel;
+    AutoCompleteTextView autoCompleteTextView;
 
     GasType[] gasType = GasType.values();
 
@@ -49,15 +56,25 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_gas_prices);
 
         spinnerCommunity = findViewById(R.id.spinnerCommunity);
+        spinnerProvince = findViewById(R.id.spinnerProvince);
+        autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+
+        spinnerProvince.setEnabled(false);
+        autoCompleteTextView.setEnabled(false);
+
         buttonShowPrices  = findViewById(R.id.buttonShowPrices);
         spinnerTypeFuel = findViewById(R.id.spinnerTypeOfFuel);
 
+        //Get communities
         mainPresenter.getCommunitiesEntityList();
 
         spinnerCommunity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                spinnerProvince.setEnabled(true);
 
+                //Get provinces
+                mainPresenter.getProvincesEntityList(position +1);
             }
 
             @Override
@@ -66,15 +83,46 @@ public class MainActivity extends Activity {
             }
         });
 
-        spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
+        spinnerProvince.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                autoCompleteTextView.setEnabled(true);
+
+                //Get towns
+                mainPresenter.getTownsEntityList(position +1);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
 
     }
 
+    public void FillSpinnerCommunities (List<CommunitiesEntity> list) {
+        ArrayAdapter<CommunitiesEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCommunity.setAdapter(adapter);
+    }
+
+    public void FillSpinnerProvinces (List<ProvincesEntity> list) {
+        ArrayAdapter<ProvincesEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerProvince.setAdapter(adapter);
+    }
+
+    public void FillAutocompleteTextView(List<TownsEntity> list) {
+        //ArrayAdapter<TownsEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, list);
+        ArrayAdapter<TownsEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerTypeFuel.setAdapter(adapter);
+    }
+
     public void ShowPricesClick(View view) {
-
         mainPresenter.showPricesClick();
-
-        //mainPresenter.updateView();
     }
 
     public String[] Labels() {
