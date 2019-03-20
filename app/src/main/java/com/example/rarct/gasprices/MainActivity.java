@@ -41,6 +41,8 @@ public class MainActivity extends Activity {
 
     GasType[] gasType = GasType.values();
 
+    private List<ProvincesEntity> provincesEntityList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +91,7 @@ public class MainActivity extends Activity {
                 autoCompleteTextView.setEnabled(true);
 
                 //Get towns
-                mainPresenter.getTownsEntityList(position +1);
+                mainPresenter.getTownsEntityList(provincesEntityList.get(position).getId());
             }
 
             @Override
@@ -111,11 +113,14 @@ public class MainActivity extends Activity {
     public void FillSpinnerProvinces (List<ProvincesEntity> list) {
         ArrayAdapter<ProvincesEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        provincesEntityList = list;
         spinnerProvince.setAdapter(adapter);
     }
 
     public void FillAutocompleteTextView(List<TownsEntity> list) {
-        //ArrayAdapter<TownsEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, list);
+        ArrayAdapter<TownsEntity> adapterq = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, list);
+        autoCompleteTextView.setAdapter(adapterq);
+
         ArrayAdapter<TownsEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTypeFuel.setAdapter(adapter);

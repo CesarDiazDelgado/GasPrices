@@ -146,7 +146,7 @@ public class MainModel{
 
         @Override
         protected List<TownsEntity> doInBackground(Void... params) {
-            if (MyDao.getProvincesEntityList(id).isEmpty()) {
+            if (MyDao.getTownsEntityList(id).isEmpty()) {
                 PopulateTowns();
             }
             return MyDao.getTownsEntityList(id);
