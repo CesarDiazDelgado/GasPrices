@@ -22,11 +22,11 @@ public class MainPresenter{
     }
 
     public List<CommunitiesEntity> getCommunities() {
-        return null;//return model.communitiesEntityList;   //Lo que realmente debe hacerse al clickar el boton
+        return null;//return model.communitiesEntityList;
     }
 /*
     public List<ProvincesEntity> getProvinces() {
-        return model.getProvincesEntityList();   //Lo que realmente debe hacerse al clickar el boton
+        return model.getProvincesEntityList();
     }
 
     public List<TownsEntity> getTowns() {
