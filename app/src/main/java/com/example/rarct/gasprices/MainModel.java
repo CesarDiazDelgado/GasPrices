@@ -11,8 +11,6 @@ import com.example.rarct.gasprices.DAO.myDao;
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
 import com.example.rarct.gasprices.Databases.ProvincesEntity;
 import com.example.rarct.gasprices.Databases.TownsEntity;
-//import com.example.rarct.gasprices.Databases.ProvincesEntity;
-//import com.example.rarct.gasprices.Databases.TownsEntity;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 //import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -42,6 +44,7 @@ public class MainActivity extends Activity {
     GasType[] gasType = GasType.values();
 
     private List<ProvincesEntity> provincesEntityList;
+    private List<TownsEntity> townsEntityList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +64,38 @@ public class MainActivity extends Activity {
         spinnerProvince = findViewById(R.id.spinnerProvince);
         autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
 
-        spinnerProvince.setEnabled(false);
-        autoCompleteTextView.setEnabled(false);
-
-        buttonShowPrices  = findViewById(R.id.buttonShowPrices);
         spinnerTypeFuel = findViewById(R.id.spinnerTypeOfFuel);
+        buttonShowPrices  = findViewById(R.id.buttonShowPrices);
+
+
+        spinnerProvince.setEnabled(false);
+        //spinnerProvince.setClickable(false);
+        //autoCompleteTextView.setEnabled(false);
+        buttonShowPrices.setEnabled(false);
+
+
+        autoCompleteTextView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                for(int i = 0 ; i < townsEntityList.size(); i++) {
+                    if(townsEntityList.get(i).getName() == s.toString())   //<-----creo que no va
+                        buttonShowPrices.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
 
         //Get communities
         mainPresenter.getCommunitiesEntityList();
+
 
         spinnerCommunity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -77,6 +104,9 @@ public class MainActivity extends Activity {
 
                 //Get provinces
                 mainPresenter.getProvincesEntityList(position +1);
+                if (provincesEntityList != null){
+                    FillSpinnerProvinces(provincesEntityList);
+                }
             }
 
             @Override
@@ -100,7 +130,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        //spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
+        spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
 
     }
 
@@ -118,12 +148,10 @@ public class MainActivity extends Activity {
     }
 
     public void FillAutocompleteTextView(List<TownsEntity> list) {
-        ArrayAdapter<TownsEntity> adapterq = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, list);
-        autoCompleteTextView.setAdapter(adapterq);
+        ArrayAdapter<TownsEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, list);
+        autoCompleteTextView.setAdapter(adapter);
+        townsEntityList = list;
 
-        ArrayAdapter<TownsEntity> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerTypeFuel.setAdapter(adapter);
     }
 
     public void ShowPricesClick(View view) {
