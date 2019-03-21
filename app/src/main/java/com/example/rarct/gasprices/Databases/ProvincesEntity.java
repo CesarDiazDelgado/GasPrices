@@ -7,13 +7,13 @@ import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-/*
+
 @Entity(foreignKeys =
                     @ForeignKey(
                             entity = CommunitiesEntity.class,
                             parentColumns = "ID",
                             childColumns = "Communities_ID"),
-                    indices = {@Index(value = "Communities_ID", unique = true)},
+                    indices = {@Index(value = "Communities_ID")},
                     tableName = "Provinces")
 
 public class ProvincesEntity {
@@ -29,10 +29,10 @@ public class ProvincesEntity {
     @ColumnInfo (name = "Communities_ID")
     private int communityID;
 
-    public ProvincesEntity(int id, String name, int community_id) {
+    public ProvincesEntity(int id, String name, int communityID) {
         this.id = id ;
         this.name = name;
-        this.communityID = community_id;
+        this.communityID = communityID;
     }
 
     @NonNull
@@ -59,5 +59,8 @@ public class ProvincesEntity {
     public void setCommunityID(int communityID) {
         this.communityID = communityID;
     }
+
+    public String toString() {
+        return name;
+    }
 }
-*/

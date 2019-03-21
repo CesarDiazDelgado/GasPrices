@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
 import com.example.rarct.gasprices.Databases.CommunitiesEntity;
+import com.example.rarct.gasprices.Databases.ProvincesEntity;
+import com.example.rarct.gasprices.Databases.TownsEntity;
 //import com.example.rarct.gasprices.Databases.ProvincesEntity;
 //import com.example.rarct.gasprices.Databases.TownsEntity;
 
@@ -14,25 +16,11 @@ public class MainPresenter{
     private MainActivity view;
     private MainModel model;
 
-    public List<CommunitiesEntity> communitiesEntityList;
-
     public MainPresenter (MainActivity view, MainModel model){
         this.view = view;
         this.model = model;
     }
 
-    public List<CommunitiesEntity> getCommunities() {
-        return null;//return model.communitiesEntityList;
-    }
-/*
-    public List<ProvincesEntity> getProvinces() {
-        return model.getProvincesEntityList();
-    }
-
-    public List<TownsEntity> getTowns() {
-        return model.getTownsEntityList();   //Lo que realmente debe hacerse al clickar el boton
-    }
-*/
 
     public void showPricesClick() {
        // model.Show-PricesClick();   //Lo que realmente debe hacerse al clickar el boton
@@ -46,7 +34,26 @@ public class MainPresenter{
         model.getCommunitiesEntityList(new Listener<List<CommunitiesEntity>>() {
             @Override
             public void onResponse(List<CommunitiesEntity> response) {
-                view.spinnerCommunity.setAdapter(new ArrayAdapter<CommunitiesEntity>(view.getApplicationContext(), android.R.layout.simple_spinner_item, response));
+                view.FillSpinnerCommunities(response);
+
+            }
+        });
+    }
+
+    void getProvincesEntityList(int position) {
+        model.getProvincesEntityList(position,new Listener<List<ProvincesEntity>>() {
+            @Override
+            public void onResponse(List<ProvincesEntity> response) {
+                view.FillSpinnerProvinces(response);
+            }
+        });
+    }
+
+    void getTownsEntityList(int position) {
+        model.getTownsEntityList(position,new Listener<List<TownsEntity>>() {
+            @Override
+            public void onResponse(List<TownsEntity> response) {
+                view.FillAutocompleteTextView(response);
             }
         });
     }

@@ -6,13 +6,13 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-/*
+
 @Entity(foreignKeys =
                     @ForeignKey(
                             entity = ProvincesEntity.class,
                             parentColumns = "ID", //my parent id
                             childColumns = "Province_ID"), //my id
-                    indices = {@Index(value = "Province_ID", unique = true)},
+                    indices = {@Index(value = "Province_ID")},
                     tableName = "Towns")
 
 public class TownsEntity implements Comparable{
@@ -28,10 +28,10 @@ public class TownsEntity implements Comparable{
     @ColumnInfo (name = "Province_ID")
     private int provinceID;
 
-    public TownsEntity(int id, String name, int province_id) {
+    public TownsEntity(int id, String name, int provinceID) {
         this.id = id ;
         this.name = name;
-        this.provinceID = province_id;
+        this.provinceID = provinceID;
     }
 
     @NonNull
@@ -59,9 +59,12 @@ public class TownsEntity implements Comparable{
         this.provinceID = provinceID;
     }
 
+    public String toString() {
+        return name;
+    }
+
     @Override
     public int compareTo(Object o) {
         return 0;
     }
 }
-*/
