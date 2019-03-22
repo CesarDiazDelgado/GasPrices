@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 for(int i = 0 ; i < townsEntityList.size(); i++) {
-                    if(townsEntityList.get(i).getName().equals(s.toString()))   //<-----creo que no va
+                    if(townsEntityList.get(i).getName().equals(s.toString()))  
                         buttonShowPrices.setEnabled(true);
                 }
             }
