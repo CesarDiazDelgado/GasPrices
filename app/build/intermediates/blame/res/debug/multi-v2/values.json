@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Usuario\\Desktop\\UNI\\Tercero\\2ndoSemestre\\AppAndroid\\GasPrices\\Gas-Prices\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Usuario\\Desktop\\UNI\\Tercero\\2ndoSemestre\\AppAndroid\\GasPrices\\Gas-Prices\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "153,55,102",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "194,97,148"
+                    },
+                    "to": {
+                        "startLines": "126,127,128",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "5784,5830,5877",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "5825,5872,5923"
+                    }
+                },
+                {
+                    "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
@@ -23,24 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Usuario\\Desktop\\UNI\\Tercero\\2ndoSemestre\\AppAndroid\\GasPrices\\Gas-Prices\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "153,55,102",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "194,97,148"
-                    },
-                    "to": {
-                        "startLines": "126,127,128",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "5784,5830,5877",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "5825,5872,5923"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\constraint-layout-1.1.0.aar\\ed2b1c16a042c536d803d248557c60a0\\res\\values\\values.xml",
+                    "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\constraint-layout-1.1.0.aar\\afd3a4d1c2f71f06530ad0a93b7ce92a\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,11,12,13,14,15,19,20,21,22,25,26,29,32,33,34,35,36,39,42,43,44,45,50,53,56,57,58,63,64,65,68,71,72,75,78,81,84,85,88,91,92,97,98,103,106,109,110,111,112,113,114,115,116,117,118,126,127,128,129",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -59,7 +59,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c2192ab4d6a80246f2fa378879f3d443\\res\\values\\values.xml",
+                    "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\37c67b46d945a6b438b73c36a87d4de5\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,13,56,88,125,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,171,172,176,177,178",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -78,7 +78,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Usuario\\Desktop\\UNI\\Tercero\\2ndoSemestre\\AppAndroid\\GasPrices\\Gas-Prices\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
