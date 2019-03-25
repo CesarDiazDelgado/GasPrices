@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 public class ShowActivity extends Activity {
 
     private ShowPresenter showPresenter;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +25,8 @@ public class ShowActivity extends Activity {
         }else {
             showPresenter = new ShowPresenter(this, MainModel.getInstance(getBaseContext()));
         }
+
+        listView = findViewById(R.id.listView);
+
     }
 }

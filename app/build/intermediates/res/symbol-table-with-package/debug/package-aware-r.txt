@@ -137,6 +137,7 @@ id italic
 id left
 id line1
 id line3
+id list_view
 id none
 id normal
 id notification_background
@@ -176,6 +177,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout show_gas_price
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw communities

@@ -2,6 +2,7 @@ package com.example.rarct.gasprices;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 //import android.support.v7.app.AppCompatActivity;
@@ -45,6 +46,9 @@ public class MainActivity extends Activity {
 
     private List<ProvincesEntity> provincesEntityList;
     private List<TownsEntity> townsEntityList;
+
+    public String url = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipioProducto/";
+    private int townID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +125,8 @@ public class MainActivity extends Activity {
                 autoCompleteTextView.setEnabled(true);
 
                 //Get towns
-                mainPresenter.getTownsEntityList(provincesEntityList.get(position).getId());
+                townID = provincesEntityList.get(position).getId();
+                mainPresenter.getTownsEntityList(townID);
             }
 
             @Override
@@ -132,6 +137,11 @@ public class MainActivity extends Activity {
 
         spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
 
+        buttonShowPrices.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                url += townID + "/";
+            }
+        });
     }
 
     public void FillSpinnerCommunities (List<CommunitiesEntity> list) {
