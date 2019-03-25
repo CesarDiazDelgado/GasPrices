@@ -82,18 +82,14 @@ public class MainActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //buttonShowPrices.setText("S " + start + "B " + before + "C " + count);
                 for(int i = 0 ; i < townsEntityList.size(); i++) {
-                    if(townsEntityList.get(i).getName().equals(s.toString()))
+                    if(townsEntityList.get(i).getName().equals(s.toString()))  
                         buttonShowPrices.setEnabled(true);
-                    //else
-                        //buttonShowPrices.setEnabled(false);
                 }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
 
