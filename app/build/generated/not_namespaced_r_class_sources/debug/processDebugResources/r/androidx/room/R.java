@@ -104,8 +104,8 @@ public final class R {
         public static final int tag_unhandled_key_listeners = 0x7f05002f;
         public static final int text = 0x7f050030;
         public static final int text2 = 0x7f050031;
-        public static final int time = 0x7f050036;
-        public static final int title = 0x7f050037;
+        public static final int time = 0x7f050037;
+        public static final int title = 0x7f050038;
     }
     public static final class integer {
         private integer() {}

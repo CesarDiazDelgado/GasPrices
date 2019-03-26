@@ -7,15 +7,15 @@ public enum GasType{
     NGO(5, "Nuevo gasóleo A"),
     GLP(17, "Gases licuados del petróleo");
 
-    private final double code;
+    private final int code;
     private final String label;
 
-    GasType(double code, String label) {
+    GasType(int code, String label) {
             this.code = code;
             this.label = label;
         }
 
-    private double code() {
+    public int code() {
         return code;
     }
 

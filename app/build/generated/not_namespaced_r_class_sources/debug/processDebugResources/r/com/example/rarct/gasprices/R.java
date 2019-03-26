@@ -758,7 +758,7 @@ public final class R {
     public static final int left=0x7f050017;
     public static final int line1=0x7f050018;
     public static final int line3=0x7f050019;
-    public static final int list_view=0x7f05001a;
+    public static final int listView=0x7f05001a;
     public static final int none=0x7f05001b;
     public static final int normal=0x7f05001c;
     public static final int notification_background=0x7f05001d;
@@ -782,14 +782,15 @@ public final class R {
     public static final int tag_unhandled_key_listeners=0x7f05002f;
     public static final int text=0x7f050030;
     public static final int text2=0x7f050031;
-    public static final int textViewCommunity=0x7f050032;
-    public static final int textViewProvince=0x7f050033;
-    public static final int textViewTown=0x7f050034;
-    public static final int textViewTypeOfFuel=0x7f050035;
-    public static final int time=0x7f050036;
-    public static final int title=0x7f050037;
-    public static final int top=0x7f050038;
-    public static final int wrap=0x7f050039;
+    public static final int textView=0x7f050032;
+    public static final int textViewCommunity=0x7f050033;
+    public static final int textViewProvince=0x7f050034;
+    public static final int textViewTown=0x7f050035;
+    public static final int textViewTypeOfFuel=0x7f050036;
+    public static final int time=0x7f050037;
+    public static final int title=0x7f050038;
+    public static final int top=0x7f050039;
+    public static final int wrap=0x7f05003a;
   }
   public static final class integer {
     public static final int status_bar_notification_info_maxnum=0x7f060000;

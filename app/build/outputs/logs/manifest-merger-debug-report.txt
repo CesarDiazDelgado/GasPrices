@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
+ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\afd3a4d1c2f71f06530ad0a93b7ce92a\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\25909df608383a70eef5e27966860a04\AndroidManifest.xml:2:1-11:12
@@ -13,20 +13,20 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\rarct\.gradle\cache
 MERGED from [androidx.core:core:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\37c67b46d945a6b438b73c36a87d4de5\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c94287a7b60457a3f30d2a5c0583403\AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\914d77c249d1f825bf7f64366787dcea\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
 	package
 		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:3:5-42
 		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
+		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
 		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-23:12
+		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
 		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:11-69
@@ -35,7 +35,7 @@ ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xm
 	android:name
 		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:7:5-21:19
+ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:7:5-22:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\afd3a4d1c2f71f06530ad0a93b7ce92a\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\afd3a4d1c2f71f06530ad0a93b7ce92a\AndroidManifest.xml:9:5-20
 MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:22:5-26:19
@@ -74,6 +74,10 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:18:27-74
+activity#com.example.rarct.gasprices.ShowActivity
+ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:21:9-50
+	android:name
+		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:21:19-47
 uses-sdk
 INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml

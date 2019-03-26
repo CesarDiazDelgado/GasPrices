@@ -1,6 +1,21 @@
 {
     "logs": [
         {
+            "outputFile": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\values-lo_values-lo.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\37c67b46d945a6b438b73c36a87d4de5\\res\\values-lo\\values-lo.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\values-th_values-th.arsc.flat",
             "map": [
                 {
@@ -16,10 +31,10 @@
             ]
         },
         {
-            "outputFile": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\values-lo_values-lo.arsc.flat",
+            "outputFile": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\values-uz_values-uz.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\37c67b46d945a6b438b73c36a87d4de5\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\37c67b46d945a6b438b73c36a87d4de5\\res\\values-uz\\values-uz.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -41,21 +56,6 @@
                         "startOffsets": "55",
                         "endColumns": "202",
                         "endOffsets": "253"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\values-uz_values-uz.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\37c67b46d945a6b438b73c36a87d4de5\\res\\values-uz\\values-uz.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
                     }
                 }
             ]

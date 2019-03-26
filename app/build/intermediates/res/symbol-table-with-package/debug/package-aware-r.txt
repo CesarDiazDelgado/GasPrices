@@ -137,7 +137,7 @@ id italic
 id left
 id line1
 id line3
-id list_view
+id listView
 id none
 id normal
 id notification_background
@@ -161,6 +161,7 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id text
 id text2
+id textView
 id textViewCommunity
 id textViewProvince
 id textViewTown

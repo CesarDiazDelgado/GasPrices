@@ -33,9 +33,6 @@ public class MainModel{
     private myDao MyDao;
     private final Resources resources;
 
-    //public List<ProvincesEntity> provincesEntityList;
-    //public List<TownsEntity> townsEntityList;
-
     private MainModel (Context context) {
 
         appDatabase = Room.databaseBuilder(context, AppDatabase.class, "Gas_Prices_Database").build();
@@ -83,7 +80,6 @@ public class MainModel{
         PopulateTownsDbAsync asyncTask = new PopulateTownsDbAsync(appDatabase);
         asyncTask.execute();
     }
-
 
     //Get communities, provinces and towns
     private class getAsyncTaskCommunity extends AsyncTask<Void, Void, List<CommunitiesEntity>> {

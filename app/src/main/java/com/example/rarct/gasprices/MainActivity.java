@@ -47,8 +47,9 @@ public class MainActivity extends Activity {
     private List<ProvincesEntity> provincesEntityList;
     private List<TownsEntity> townsEntityList;
 
-    public String url = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipioProducto/";
+    public static String url = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipioProducto/";
     private int townID;
+    private int fuelType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +101,6 @@ public class MainActivity extends Activity {
         //Get communities
         mainPresenter.getCommunitiesEntityList();
 
-
         spinnerCommunity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -137,9 +137,22 @@ public class MainActivity extends Activity {
 
         spinnerTypeFuel.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Labels()));
 
+        spinnerTypeFuel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                fuelType = gasType[position].code();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         buttonShowPrices.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                url += townID + "/";
+                url += townID + "/" + fuelType;
+                startActivity(new Intent(MainActivity.this, ShowActivity.class));
             }
         });
     }
