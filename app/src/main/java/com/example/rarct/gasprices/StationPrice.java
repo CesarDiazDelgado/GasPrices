@@ -116,6 +116,7 @@ public abstract class StationPrice implements Parcelable {
         reader.read(buffer);
         //readJsonStream(inputStream);
         try {
+            //Con esto se lee el json de la query, pero no funciona o funciona cuando le da la gana
             JSONObject obj = new JSONObject(new String(buffer));
             if (obj.getJSONArray("ListaEESSPrecio").length() != 0) {
                 return obj.getJSONArray("ListaEESSPrecio").get(1) + "";
@@ -127,6 +128,7 @@ public abstract class StationPrice implements Parcelable {
         return new String(buffer);
     }
 
+    //Estos métodos son pruebas pero puede que utilicemos alguno
     private String readJsonStream(InputStream in) throws IOException {
         // Nueva instancia JsonReader
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
