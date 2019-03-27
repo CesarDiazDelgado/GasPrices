@@ -18,8 +18,10 @@ public class ShowActivity extends Activity {
 
     private ShowPresenter showPresenter;
     private StationPrice stationPrice;
-    private ListView listView;
+    private static ListView listView;
     public static TextView textView;
+
+    private static ArrayList<String> arrayListGl = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +54,15 @@ public class ShowActivity extends Activity {
         textView = findViewById(R.id.textView);
         stationPrice.Final();
         //textView.setText(stationPrice.Final());
-        //FillListView(stationPrice.ReturnStringUrl());
 
     }
+    
 
-    public void FillListView (String s) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Collections.singletonList(s));
-        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        listView.setAdapter(adapter);
+    private void FillListView(String s) {
+        String gl = "new GameListView(myNumber, contBulls, contCows)";
+        arrayListGl.add(gl);
+
+        CustomAdapter customAdapter = new CustomAdapter(this, arrayListGl);
+        listView.setAdapter(customAdapter);
     }
 }
