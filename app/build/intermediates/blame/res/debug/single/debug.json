@@ -48,12 +48,12 @@
         "source": "C:\\Users\\rarct\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\37c67b46d945a6b438b73c36a87d4de5\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\layout_show_gas_price.xml.flat",
-        "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\layout\\show_gas_price.xml"
-    },
-    {
         "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\layout_show_gas_price.xml.flat",
+        "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\layout\\show_gas_price.xml"
     },
     {
         "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
@@ -64,12 +64,12 @@
         "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
     {
         "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
@@ -110,6 +110,10 @@
     {
         "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\layout_listviewlayout.xml.flat",
+        "source": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\src\\main\\res\\layout\\listviewlayout.xml"
     },
     {
         "merged": "D:\\AplicacionesAndroid\\GasPricesBueno\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",

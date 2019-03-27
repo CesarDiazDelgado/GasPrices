@@ -32,12 +32,13 @@ import org.json.*;
 public abstract class StationPrice implements Parcelable {
 
     private String rotulo;
-    private String direccion;
-    private String precioProducto;
+    private static String direccion;
+    private static String precioProducto;
     private String latitud;
     private String longitud;
 
     private String url;
+    public static CustomAdapter adapter;
 
     public StationPrice(String url) {
         this.url = url;
@@ -83,7 +84,7 @@ public abstract class StationPrice implements Parcelable {
 
     public String GetUrl(String myUrl) throws IOException {
         InputStream inputStream = null;
-        int len = 5000;
+        int len = 50000;
         try {
             URL url = new URL(myUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -114,12 +115,27 @@ public abstract class StationPrice implements Parcelable {
         Reader reader = new InputStreamReader(inputStream, "UTF-8");
         char[] buffer = new char[len];
         reader.read(buffer);
-        //readJsonStream(inputStream);
+
+        String s;
+        String[] result;
+
         try {
             //Con esto se lee el json de la query, pero no funciona o funciona cuando le da la gana
             JSONObject obj = new JSONObject(new String(buffer));
-            if (obj.getJSONArray("ListaEESSPrecio").length() != 0) {
-                return obj.getJSONArray("ListaEESSPrecio").get(1) + "";
+            JSONArray array;
+            int size = obj.getJSONArray("ListaEESSPrecio").length();
+            result = new String[size];
+            if (size != 0) {
+                array = obj.getJSONArray("ListaEESSPrecio");
+                for (int i = 0; i <= size; i++) {
+                    rotulo = array.getJSONObject(i).get("Rótulo").toString();
+                    direccion = array.getJSONObject(i).get("Dirección").toString();
+                    precioProducto = array.getJSONObject(i).get("PrecioProducto").toString();
+                    latitud = array.getJSONObject(i).get("Latitud").toString();
+                    longitud = array.getJSONObject(i).get("Longitud (WGS84)").toString();
+                }
+
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -127,6 +143,11 @@ public abstract class StationPrice implements Parcelable {
 
         return new String(buffer);
     }
+
+    public static void GetText() {
+        adapter.SetText(precioProducto, direccion);
+    }
+
 
     //Estos métodos son pruebas pero puede que utilicemos alguno
     private String readJsonStream(InputStream in) throws IOException {

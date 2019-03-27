@@ -88,8 +88,11 @@ public class MainActivity extends Activity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 for(int i = 0 ; i < townsEntityList.size(); i++) {
-                    if(townsEntityList.get(i).getName().equals(s.toString()))  
+                    if(townsEntityList.get(i).getName().equals(s.toString())) {
                         buttonShowPrices.setEnabled(true);
+                        townID = townsEntityList.get(i).getId();
+                    }
+
                 }
             }
 
@@ -125,8 +128,7 @@ public class MainActivity extends Activity {
                 autoCompleteTextView.setEnabled(true);
 
                 //Get towns
-                townID = provincesEntityList.get(position).getId();
-                mainPresenter.getTownsEntityList(townID);
+                mainPresenter.getTownsEntityList(provincesEntityList.get(position).getId());
             }
 
             @Override
