@@ -1,118 +1,118 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\afd3a4d1c2f71f06530ad0a93b7ce92a\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\25909df608383a70eef5e27966860a04\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.sqlite:sqlite-framework:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\sqlite-framework-2.0.0.aar\9d6a8b9b6be1b88e36663fef7bc455c6\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.sqlite:sqlite:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\sqlite-2.0.0.aar\da814b4a3231f1da5a708f138e9061c2\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\c13790dfc7bf5a285bc9db54b8458018\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\37c67b46d945a6b438b73c36a87d4de5\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c94287a7b60457a3f30d2a5c0583403\AndroidManifest.xml:17:1-25:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\914d77c249d1f825bf7f64366787dcea\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed2b1c16a042c536d803d248557c60a0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\a440a4213199ea9e8b9797d634613d05\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\abea6a98dab29cc8ff20da23d070b3cc\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\sqlite-framework-2.0.0.aar\a48648a31cdc40f05a60b4f7a66cbbed\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\sqlite-2.0.0.aar\45e4d4988382f7324a4c4521648fb7e0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\7a7a1f519428706988606a0eb57d0537\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\c2192ab4d6a80246f2fa378879f3d443\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\d25e33eb8e3c20a49f904506b1f4b50d\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\abacd18648712e5aa3bfd9a9beb8c844\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
 	package
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:3:5-42
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:1-24:12
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:5:5-66
+ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:5:5-66
 	android:name
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:7:5-22:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\afd3a4d1c2f71f06530ad0a93b7ce92a\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\afd3a4d1c2f71f06530ad0a93b7ce92a\AndroidManifest.xml:9:5-20
-MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\25909df608383a70eef5e27966860a04\AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\25909df608383a70eef5e27966860a04\AndroidManifest.xml:9:5-20
-MERGED from [androidx.core:core:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\37c67b46d945a6b438b73c36a87d4de5\AndroidManifest.xml:22:5-89
-MERGED from [androidx.core:core:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\37c67b46d945a6b438b73c36a87d4de5\AndroidManifest.xml:22:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c94287a7b60457a3f30d2a5c0583403\AndroidManifest.xml:22:5-23:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c94287a7b60457a3f30d2a5c0583403\AndroidManifest.xml:22:5-23:19
+ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:7:5-22:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed2b1c16a042c536d803d248557c60a0\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed2b1c16a042c536d803d248557c60a0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\a440a4213199ea9e8b9797d634613d05\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\a440a4213199ea9e8b9797d634613d05\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\abea6a98dab29cc8ff20da23d070b3cc\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\abea6a98dab29cc8ff20da23d070b3cc\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\c2192ab4d6a80246f2fa378879f3d443\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\c2192ab4d6a80246f2fa378879f3d443\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\d25e33eb8e3c20a49f904506b1f4b50d\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\d25e33eb8e3c20a49f904506b1f4b50d\AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\37c67b46d945a6b438b73c36a87d4de5\AndroidManifest.xml:22:18-86
+		ADDED from [androidx.core:core:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\c2192ab4d6a80246f2fa378879f3d443\AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:13:9-40
 activity#com.example.rarct.gasprices.MainActivity
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:14:9-20:20
+ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:14:19-47
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:15:13-19:29
+ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:16:17-69
+ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:16:25-66
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:18:17-77
+ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:18:27-74
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.example.rarct.gasprices.ShowActivity
-ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:21:9-50
+ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:21:9-50
 	android:name
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml:21:19-47
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml:21:19-47
 uses-sdk
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\afd3a4d1c2f71f06530ad0a93b7ce92a\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\afd3a4d1c2f71f06530ad0a93b7ce92a\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:20:5-44
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\25909df608383a70eef5e27966860a04\AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\25909df608383a70eef5e27966860a04\AndroidManifest.xml:7:5-43
-MERGED from [androidx.sqlite:sqlite-framework:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\sqlite-framework-2.0.0.aar\9d6a8b9b6be1b88e36663fef7bc455c6\AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite-framework:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\sqlite-framework-2.0.0.aar\9d6a8b9b6be1b88e36663fef7bc455c6\AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\sqlite-2.0.0.aar\da814b4a3231f1da5a708f138e9061c2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\sqlite-2.0.0.aar\da814b4a3231f1da5a708f138e9061c2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\c13790dfc7bf5a285bc9db54b8458018\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\c13790dfc7bf5a285bc9db54b8458018\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\37c67b46d945a6b438b73c36a87d4de5\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\37c67b46d945a6b438b73c36a87d4de5\AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c94287a7b60457a3f30d2a5c0583403\AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c94287a7b60457a3f30d2a5c0583403\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\914d77c249d1f825bf7f64366787dcea\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\914d77c249d1f825bf7f64366787dcea\AndroidManifest.xml:20:5-44
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed2b1c16a042c536d803d248557c60a0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed2b1c16a042c536d803d248557c60a0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\a440a4213199ea9e8b9797d634613d05\AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\a440a4213199ea9e8b9797d634613d05\AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\abea6a98dab29cc8ff20da23d070b3cc\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\abea6a98dab29cc8ff20da23d070b3cc\AndroidManifest.xml:7:5-43
+MERGED from [androidx.sqlite:sqlite-framework:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\sqlite-framework-2.0.0.aar\a48648a31cdc40f05a60b4f7a66cbbed\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\sqlite-framework-2.0.0.aar\a48648a31cdc40f05a60b4f7a66cbbed\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\sqlite-2.0.0.aar\45e4d4988382f7324a4c4521648fb7e0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\sqlite-2.0.0.aar\45e4d4988382f7324a4c4521648fb7e0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\7a7a1f519428706988606a0eb57d0537\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\7a7a1f519428706988606a0eb57d0537\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\c2192ab4d6a80246f2fa378879f3d443\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\c2192ab4d6a80246f2fa378879f3d443\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\d25e33eb8e3c20a49f904506b1f4b50d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\d25e33eb8e3c20a49f904506b1f4b50d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\abacd18648712e5aa3bfd9a9beb8c844\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\abacd18648712e5aa3bfd9a9beb8c844\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		ADDED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AplicacionesAndroid\GasPricesBueno\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\UNI\Tercero\2ndoSemestre\AppAndroid\GasPrices\Gas-Prices\app\src\main\AndroidManifest.xml
 service#androidx.room.MultiInstanceInvalidationService
-ADDED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:23:9-25:40
+ADDED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\a440a4213199ea9e8b9797d634613d05\AndroidManifest.xml:23:9-25:40
 	android:exported
-		ADDED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:25:13-37
+		ADDED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\a440a4213199ea9e8b9797d634613d05\AndroidManifest.xml:25:13-37
 	android:name
-		ADDED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\rarct\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\f8a646988b8c9a3f40f30ee073b0e7de\AndroidManifest.xml:24:13-74
+		ADDED from [androidx.room:room-runtime:2.1.0-alpha04] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\room-runtime-2.1.0-alpha04.aar\a440a4213199ea9e8b9797d634613d05\AndroidManifest.xml:24:13-74
