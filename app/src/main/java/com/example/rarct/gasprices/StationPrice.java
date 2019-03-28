@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.JsonReader;
+import android.util.JsonWriter;
 import android.widget.ListView;
 
 import com.android.volley.Response;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -39,6 +41,7 @@ public abstract class StationPrice implements Parcelable {
 
     private String url;
     public static CustomAdapter adapter;
+    public static String[] writerArray;
 
     public StationPrice(String url) {
         this.url = url;
@@ -46,7 +49,7 @@ public abstract class StationPrice implements Parcelable {
     }
 
     private void ReturnStringUrl(String s) {
-        ShowActivity.textView.setText(s);
+        ShowActivity.textView.setText(writerArray.length +"");
     }
 
     public void Final(){
@@ -116,27 +119,42 @@ public abstract class StationPrice implements Parcelable {
         char[] buffer = new char[len];
         reader.read(buffer);
 
-        String s;
-        String[] result;
-
+        StringWriter stringWriter = new StringWriter();
         try {
             //Con esto se lee el json de la query, pero no funciona o funciona cuando le da la gana
             JSONObject obj = new JSONObject(new String(buffer));
             JSONArray array;
+
+            JsonWriter jsonWriter = new JsonWriter(stringWriter);
             int size = obj.getJSONArray("ListaEESSPrecio").length();
-            result = new String[size];
+            writerArray = new String[size*5];
+
             if (size != 0) {
                 array = obj.getJSONArray("ListaEESSPrecio");
-                for (int i = 0; i <= size; i++) {
+                for (int i = 0; i < size; i++) {
                     rotulo = array.getJSONObject(i).get("Rótulo").toString();
                     direccion = array.getJSONObject(i).get("Dirección").toString();
                     precioProducto = array.getJSONObject(i).get("PrecioProducto").toString();
                     latitud = array.getJSONObject(i).get("Latitud").toString();
                     longitud = array.getJSONObject(i).get("Longitud (WGS84)").toString();
+
+                    writerArray[i] = rotulo;
+                    writerArray[i + 1] = direccion;
+                    writerArray[i + 2] = precioProducto;
+                    writerArray[i + 3] = latitud;
+                    writerArray[i + 4] = longitud;
+                    /*jsonWriter.beginObject()
+                            .name("Rótulo").value(rotulo)
+                            .name("Dirección").value(direccion)
+                            .name("PrecioProducto").value(precioProducto)
+                            .name("Latitud").value(latitud)
+                            .name("Longitud (WGS84)").value(longitud)
+                            .endObject();
+                    return jsonWriter.toString();*/
                 }
 
-
             }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -146,70 +164,6 @@ public abstract class StationPrice implements Parcelable {
 
     public static void GetText() {
         adapter.SetText(precioProducto, direccion);
-    }
-
-
-    //Estos métodos son pruebas pero puede que utilicemos alguno
-    private String readJsonStream(InputStream in) throws IOException {
-        // Nueva instancia JsonReader
-        JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
-        try {
-            // Leer Array
-            return LeerArrayStationPrices(reader);
-        } finally {
-            reader.close();
-        }
-
-    }
-
-    private String LeerArrayStationPrices(JsonReader reader) throws IOException {
-        // Lista temporal
-        String stationPrices = "";
-
-        reader.beginArray();
-        while (reader.hasNext()) {
-            // Leer objeto
-            stationPrices += LeerStationPrice(reader);
-        }
-        reader.endArray();
-        return stationPrices;
-    }
-
-    public String LeerStationPrice(JsonReader reader) throws IOException {
-        /*String rotulo = null;
-        String direccion = null;
-        String precioProducto = null;
-        String latitud = null;
-        String longitud = null;*/
-
-        reader.beginObject();
-        while (reader.hasNext()) {
-            String name = reader.nextName();
-            switch (name) {
-                case "Rotulo":
-                    rotulo = reader.nextString();
-                    break;
-                case "Direccion":
-                    direccion = reader.nextString();
-                    break;
-                case "PrecioProducto":
-                    precioProducto = reader.nextString();
-                    break;
-                case "Latitud":
-                    latitud = reader.nextString();
-                    break;
-                case "Longitud":
-                    longitud = reader.nextString();
-                    break;
-                default:
-                    reader.skipValue();
-                    break;
-            }
-        }
-        reader.endObject();
-
-        return rotulo + direccion + precioProducto + latitud + longitud;
-
     }
 
     public List<StationPrice> GetPrice(TownsEntity town, GasType gasType, Listener listener, Response.ErrorListener errorListener) {

@@ -126,6 +126,7 @@ id chains
 id chronometer
 id dimensions
 id direct
+id editText
 id end
 id forever
 id gone
@@ -172,6 +173,7 @@ id top
 id wrap
 integer status_bar_notification_info_maxnum
 layout activity_gas_prices
+layout listviewlayout
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
