@@ -58,7 +58,7 @@ public class ShowActivity extends Activity {
     }
     
 
-    private void FillListView(String s) {
+    public void FillListView(String[] s) {
         String gl = "new GameListView(myNumber, contBulls, contCows)";
         arrayListGl.add(gl);
 
