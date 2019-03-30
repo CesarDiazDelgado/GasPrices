@@ -243,7 +243,7 @@ public abstract class StationPrice implements Parcelable {
 
     private static final Locale spanish = new Locale("es", "ES");
     private static final NumberFormat doubleFormat = NumberFormat.getInstance(spanish);
-    private static double parseDouble(String s) {
+    public static double parseDouble(String s) {
         try {
             return doubleFormat.parse(s).doubleValue();
         } catch (ParseException e) {
