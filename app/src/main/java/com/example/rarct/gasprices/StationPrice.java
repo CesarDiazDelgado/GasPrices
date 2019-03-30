@@ -152,7 +152,6 @@ public abstract class StationPrice implements Parcelable {
                             .endObject();
                     return jsonWriter.toString();*/
                 }
-
             }
 
         } catch (JSONException e) {
