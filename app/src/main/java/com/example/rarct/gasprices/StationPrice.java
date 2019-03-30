@@ -64,8 +64,6 @@ public abstract class StationPrice implements Parcelable {
     }
 
     private void ReturnStringUrl(String s) {
-        //ShowActivity.textView.setText(writerArray.length +"");
-        //ShowActivity.FillListView(new CustomAdapter(context, new ArrayList<String>(), writerArray[0], writerArray[1]));
         return;
 
     }
@@ -128,14 +126,11 @@ public abstract class StationPrice implements Parcelable {
                             writerArray[j + 2] = rotulo;
                             writerArray[j + 3] = latitud;
                             writerArray[j + 4] = longitud;
-
-                            arrayListGl.add(writerArray[j]);
-                            ShowActivity.FillListView(new CustomAdapter(context, arrayListGl, writerArray[j], writerArray[j+1]));
-                            //ShowActivity.FillListView(new CustomAdapter(context, arrayListGl, writerArray[j +2], writerArray[j+3]));
                         }
                     }
 
-                    ShowActivity.textView.setText(size +"");
+                    ShowActivity.FillListView(writerArray);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -144,7 +139,6 @@ public abstract class StationPrice implements Parcelable {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                ShowActivity.textView.setText("Whops");
             }
         });
         queue.add(request);

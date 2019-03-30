@@ -1,5 +1,6 @@
 package com.example.rarct.gasprices;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Parcel;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -19,9 +21,10 @@ public class ShowActivity extends Activity {
     private ShowPresenter showPresenter;
     private StationPrice stationPrice;
     private static ListView listView;
-    public static TextView textView;
+    public static ProgressBar progressBar;
 
-    private static ArrayList<String> arrayListGl = new ArrayList<>();
+    private static Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,17 +50,23 @@ public class ShowActivity extends Activity {
             };
 
         }
-
+        context = this;
         setContentView(R.layout.show_gas_price);
 
         listView = findViewById(R.id.listView);
-        textView = findViewById(R.id.textView);
+        progressBar = findViewById(R.id.progressBar);
         stationPrice.Final();
 
     }
     
 
-    public static void FillListView(CustomAdapter customAdapter) {
-        listView.setAdapter(customAdapter);
+    public static void FillListView(String[] s) {
+        String[] aux = new String[s.length/5];
+        for (int i = 0, j = 0; i < aux.length; i++, j+=5) {
+            aux[i] = s[j] + "  " + s[j +1];
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(context,android.R.layout.simple_list_item_1,aux);
+        listView.setAdapter(adapter);
+        progressBar.setVisibility(View.INVISIBLE);
     }
 }

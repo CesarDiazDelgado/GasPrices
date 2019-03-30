@@ -147,6 +147,7 @@ id notification_main_column_container
 id packed
 id parent
 id percent
+id progressBar
 id right
 id right_icon
 id right_side
@@ -162,7 +163,6 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id text
 id text2
-id textView
 id textViewCommunity
 id textViewProvince
 id textViewTown
