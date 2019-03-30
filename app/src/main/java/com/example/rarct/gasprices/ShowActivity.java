@@ -1,7 +1,9 @@
 package com.example.rarct.gasprices;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+
+import java.util.ArrayList;
 
 public class ShowActivity extends Activity {
 
@@ -55,14 +59,34 @@ public class ShowActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                double n1 = showPresenter.parseDouble(auxMaps[position]);
-                double n2= showPresenter.parseDouble(auxMaps[position + 1]);
-                String name = direction[position];
-                Maps(n1 +"", n2 +"", name);
+                CreateSimpleDialog(position).show();
             }
         });
     }
-    
+
+    private AlertDialog CreateSimpleDialog(final int position) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("")
+                .setMessage("¿Ir al mapa?")
+                .setPositiveButton("Map",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                double n1 = showPresenter.parseDouble(auxMaps[position]);
+                                double n2= showPresenter.parseDouble(auxMaps[position + 1]);
+                                String name = direction[position];
+                                Maps(n1 +"", n2 +"", name);
+                            }
+                        })
+                .setNegativeButton("Atrás",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+        return builder.create();
+    }
 
     public static void FillListView(String[] s) {
         aux = new String[s.length/5];
@@ -79,7 +103,7 @@ public class ShowActivity extends Activity {
         progressBar.setVisibility(View.INVISIBLE);
     }
 
-    public void Maps(String s1, String s2, String name) {
+    private void Maps(String s1, String s2, String name) {
         // Create a Uri from an intent string. Use the result to create an Intent.
         Uri gmmIntentUri = Uri.parse("geo:" + s1 + "," + s2 + "?q=" + Uri.encode(name));
 
