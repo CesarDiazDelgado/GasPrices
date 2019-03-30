@@ -34,7 +34,7 @@ public class ShowActivity extends Activity {
         }else {
             showPresenter = new ShowPresenter(this, MainModel.getInstance(getBaseContext()));
 
-            stationPrice = new StationPrice(MainActivity.url) {
+            stationPrice = new StationPrice(MainActivity.url, this) {
                 @Override
                 public int describeContents() {
                     return 0;
@@ -53,16 +53,11 @@ public class ShowActivity extends Activity {
         listView = findViewById(R.id.listView);
         textView = findViewById(R.id.textView);
         stationPrice.Final();
-        //textView.setText(stationPrice.Final());
 
     }
     
 
-    public void FillListView(String[] s) {
-        String gl = "new GameListView(myNumber, contBulls, contCows)";
-        arrayListGl.add(gl);
-
-        CustomAdapter customAdapter = new CustomAdapter(this, arrayListGl);
+    public static void FillListView(CustomAdapter customAdapter) {
         listView.setAdapter(customAdapter);
     }
 }

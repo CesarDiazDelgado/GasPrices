@@ -14,11 +14,19 @@ public class CustomAdapter extends BaseAdapter {
 
     Context mContext;
     ArrayList<String> arrayListGl;
+    int cont;
+
+    String s1;
+    String s2;
+
     public EditText editText;
 
-    public CustomAdapter(Context context, ArrayList<String> arrayListGl) {
+    public CustomAdapter(Context context, ArrayList<String> arrayListGl, String s1, String s2) {
         this.mContext = context;
         this.arrayListGl = arrayListGl;
+        this.s1 = s1;
+        this.s2 = s2;
+
     }
 
     @Override
@@ -42,13 +50,9 @@ public class CustomAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.listviewlayout, parent, false);
 
         editText = convertView.findViewById(R.id.editText);
+        editText.setText(s1 + "  " + s2);
 
-        StationPrice.GetText();
         return convertView;
-    }
-
-    public void SetText(String precioProducto , String direccion) {
-        editText.setText(precioProducto + "  " + direccion);
     }
 
 }
