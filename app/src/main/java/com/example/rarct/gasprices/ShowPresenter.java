@@ -1,5 +1,8 @@
 package com.example.rarct.gasprices;
 
+import android.content.Context;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShowPresenter {
@@ -10,7 +13,7 @@ public class ShowPresenter {
 
     List<StationPrice> stationPrices;
 
-    public ShowPresenter (ShowActivity view, MainModel model){
+    public ShowPresenter (ShowActivity view, MainModel model ){
         this.showActivity = view;
         this.mainModel = model;
 
@@ -18,16 +21,6 @@ public class ShowPresenter {
         //ocultar barra progreso
         //mostrar lista
     }
-/*
-    void getCommunitiesEntityList() {
-        StationPrice.GetStringUrl(new Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                showActivity.FillListView(response);
-
-            }
-        });
-    }*/
 
 
 }

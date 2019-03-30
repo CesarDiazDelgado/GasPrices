@@ -64,8 +64,10 @@ public abstract class StationPrice implements Parcelable {
     }
 
     private void ReturnStringUrl(String s) {
-        return;
         //ShowActivity.textView.setText(writerArray.length +"");
+        //ShowActivity.FillListView(new CustomAdapter(context, new ArrayList<String>(), writerArray[0], writerArray[1]));
+        return;
+
     }
 
     public void Final(){
@@ -128,12 +130,10 @@ public abstract class StationPrice implements Parcelable {
                             writerArray[j + 4] = longitud;
 
                             arrayListGl.add(writerArray[j]);
-                            //arrayListGl.add(writerArray[j + 1]);
+                            ShowActivity.FillListView(new CustomAdapter(context, arrayListGl, writerArray[j], writerArray[j+1]));
+                            //ShowActivity.FillListView(new CustomAdapter(context, arrayListGl, writerArray[j +2], writerArray[j+3]));
                         }
                     }
-
-                    for (int i = 0; i < size; i+=2)
-                        ShowActivity.FillListView(new CustomAdapter(context, arrayListGl, writerArray[i], writerArray[i+1]));
 
                     ShowActivity.textView.setText(size +"");
                 } catch (JSONException e) {
