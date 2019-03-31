@@ -70,15 +70,13 @@ public class ShowActivity extends Activity {
             }
         });
 
-        Toast toast = Toast.makeText(context, text, duration);
-        /////toast.show();///////
 
     }
 
     private AlertDialog CreateSimpleDialog(final int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Address:\n" + direction[position] + "\n")
-                .setMessage("Price:\n" + precios[position])
+        builder.setTitle("Address:\n\n" + direction[position] + "\n\n")
+                .setMessage("Price:\n\n" + precios[position])
                 .setNegativeButton("MAP",
                         new DialogInterface.OnClickListener() {
                             @Override
@@ -125,10 +123,18 @@ public class ShowActivity extends Activity {
         // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         // Make the Intent explicit by setting the Google Maps package
+
         mapIntent.setPackage("com.google.android.apps.maps");
 
+        if (mapIntent == null)
+            NotMaps();
         // Attempt to start an activity that can handle the Intent
         startActivity(mapIntent);
+    }
+
+    public void NotMaps() {
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
 }
