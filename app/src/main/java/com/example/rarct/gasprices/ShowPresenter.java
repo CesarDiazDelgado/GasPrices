@@ -1,33 +1,31 @@
 package com.example.rarct.gasprices;
 
-import java.util.List;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
 
 public class ShowPresenter {
 
-    private ShowActivity showActivity;
-    private MainModel mainModel;
+    private static ShowActivity showActivity;
     private StationPrice stationPrice;
 
-    List<StationPrice> stationPrices;
-
-    public ShowPresenter (ShowActivity view, MainModel model){
+    public ShowPresenter (ShowActivity view, StationPrice stationPrice ){
         this.showActivity = view;
-        this.mainModel = model;
-
-        //stationPrices = mainModel.getListStations();
-        //ocultar barra progreso
-        //mostrar lista
+        this.stationPrice = stationPrice;
     }
-/*
-    void getCommunitiesEntityList() {
-        StationPrice.GetStringUrl(new Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                showActivity.FillListView(response);
 
-            }
-        });
-    }*/
+    public void StartQuery() {
+        stationPrice.GetStringUrl();
+    }
 
+    private static final Locale spanish = new Locale("es", "ES");
+    private static final NumberFormat doubleFormat = NumberFormat.getInstance(spanish);
+    public static double parseDouble(String s) {
+        try {
+            return doubleFormat.parse(s).doubleValue();
+        } catch (ParseException e) {
+            return 0;
+        }
+    }
 
 }
