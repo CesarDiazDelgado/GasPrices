@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF9803"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,6 +14,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="Community:"
+        android:textColor="#FEFFFD"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +27,7 @@
         android:layout_marginTop="30dp"
         android:text="Province:"
         android:textSize="18sp"
+        android:textColor="#FEFFFD"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCommunity" />
 
@@ -36,6 +39,7 @@
         android:layout_marginTop="30dp"
         android:text="Town:"
         android:textSize="18sp"
+        android:textColor="#FEFFFD"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewProvince" />
 
@@ -47,6 +51,7 @@
         android:layout_marginTop="30dp"
         android:text="Type of fuel:"
         android:textSize="18sp"
+        android:textColor="#FEFFFD"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTown" />
 
@@ -60,6 +65,7 @@
         android:layout_marginBottom="4dp"
         android:onClick="ShowPricesClick"
         android:text="SHOW PRICES"
+        android:backgroundTint="#FF0000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +78,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="20dp"
+        android:textColor="#FEFFFD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewCommunity"
         app:layout_constraintTop_toTopOf="parent" />
@@ -83,6 +90,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:textColor="#FEFFFD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewProvince"
         app:layout_constraintTop_toBottomOf="@+id/spinnerCommunity" />
@@ -93,6 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="35dp"
+        android:textColor="#FEFFFD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewTypeOfFuel"
         app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />

@@ -92,7 +92,6 @@ public class MainActivity extends Activity {
                         buttonShowPrices.setEnabled(true);
                         townID = townsEntityList.get(i).getId();
                     }
-
                 }
             }
 
